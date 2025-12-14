@@ -12,7 +12,7 @@ export const HeroImage = () => {
           height={1000}
           draggable={false}
         />
-        <div className='absolute inset-x-0 bottom-0 h-20 w-full bg-linear-to-b from-transparent via-white to-white dark:via-black/50 dark:to-black scale-[1.1] pointer-events-none'></div>
+        <div className='absolute inset-x-0 bottom-0 h-60 w-full bg-linear-to-b from-transparent via-white to-white dark:via-black/50 dark:to-black scale-[1.1] pointer-events-none'></div>
       </div>
     </div>
   );
