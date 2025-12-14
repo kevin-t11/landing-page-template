@@ -2,6 +2,7 @@
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import { SVGProps, useState } from 'react';
+import { TextAnimate } from './ui/text-animate';
 
 export const HeroSection = () => {
   return (
@@ -20,13 +21,76 @@ export const HeroTitle = () => {
   return (
     <h1 className='text-6xl font-bold text-center tracking-tighter max-w-xl mx-auto font-sans'>
       <span className='flex items-center gap-1 ml-6'>
-        Stop <HeroCloseIcon className='inline-block size-16' /> Guessing.{' '}
+        <TextAnimate
+          once
+          as='span'
+          by='word'
+          delay={0}
+          animation='blurInUp'
+          className='inline-flex items-center gap-1 tracking-tighter'
+        >
+          Stop
+        </TextAnimate>
+        <motion.div
+          viewport={{ once: true }}
+          initial={{ opacity: 0, filter: 'blur(10px)', y: 40 }}
+          animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+          transition={{
+            delay: 2,
+            y: { duration: 0.3, delay: 0.1 },
+            opacity: { duration: 0.4, delay: 0.1 },
+            filter: { duration: 0.3, delay: 0.1 },
+          }}
+        >
+          <HeroCloseIcon className='inline-block size-16' />
+        </motion.div>
+        <TextAnimate
+          once
+          as='span'
+          by='word'
+          delay={0.2}
+          animation='blurIn'
+          className='inline'
+        >
+          Guessing.
+        </TextAnimate>
         <br />{' '}
       </span>
       <span className='flex items-center gap-2 tracking-tighter'>
-        Start Going{' '}
-        <span className='bg-linear-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent inline-flex items-center gap-1'>
-          Viral <HeroCTAIcon className='inline-block size-20' />
+        <TextAnimate
+          once
+          as='span'
+          by='word'
+          delay={0.4}
+          animation='blurInUp'
+          className='inline'
+        >
+          Start Going
+        </TextAnimate>
+        <span className='inline-flex items-center gap-1'>
+          <TextAnimate
+            once
+            as='span'
+            by='word'
+            delay={0.7}
+            animation='blurInUp'
+            segmentClassName='bg-linear-to-r from-sky-500 to-sky-600 bg-clip-text text-transparent'
+          >
+            Viral
+          </TextAnimate>
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ opacity: 0, filter: 'blur(10px)', y: 40 }}
+            animate={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
+            transition={{
+              delay: 2,
+              y: { duration: 0.3, delay: 0.9 },
+              opacity: { duration: 0.4, delay: 0.9 },
+              filter: { duration: 0.3, delay: 0.9 },
+            }}
+          >
+            <HeroCTAIcon className='inline-block size-20' />
+          </motion.div>
         </span>
       </span>
     </h1>
