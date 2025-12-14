@@ -5,6 +5,7 @@ import { CreatorIntelligence } from './features/creator-intelligence';
 import { HookStyle } from './features/hook-style';
 import { PersonaCreation } from './features/persona-creation';
 import { ViralVideoXRay } from './features/viral-video-xray';
+import { DottedGlowBackground } from './ui/dotted-glow-background';
 
 export const FeaturesSection = () => {
   const features = [
@@ -48,7 +49,7 @@ export const FeaturesSection = () => {
 
   return (
     <div className='flex flex-col items-center justify-center -mt-14 gap-2'>
-      <span className='text-sm font-medium bg-linear-to-r from-sky-500 to-sky-600 rounded-full px-4 py-1 text-white hover:brightness-110 active:scale-95'>
+      <span className='text-sm font-medium bg-linear-to-r ring-2 ring-offset-1 ring-offset-sky-200 ring-sky-400 from-sky-500 to-sky-600 rounded-full px-4 py-1 text-white hover:brightness-110 active:scale-95'>
         Features
       </span>
       <h2 className='text-4xl font-bold text-center tracking-tight max-w-xl mx-auto font-sans'>
@@ -75,11 +76,19 @@ const FeatureCard = ({
   className: string;
 }) => {
   return (
-    <div className={cn('border border-muted rounded-xl p-4', className)}>
-      <FeatureCardSkeleton>{skeleton}</FeatureCardSkeleton>
-      <div className='space-y-1'>
-        <FeatureCardTitle title={title} />
-        <FeatureCardDescription description={description} />
+    <div
+      className={cn(
+        'border border-muted rounded-xl p-4 relative overflow-hidden ',
+        className
+      )}
+    >
+      <DottedGlowBackground opacity={0.1} backgroundOpacity={0.02} />
+      <div className='relative z-10'>
+        <FeatureCardSkeleton>{skeleton}</FeatureCardSkeleton>
+        <div className='space-y-1'>
+          <FeatureCardTitle title={title} />
+          <FeatureCardDescription description={description} />
+        </div>
       </div>
     </div>
   );
@@ -100,5 +109,5 @@ const FeatureCardDescription = ({ description }: { description: string }) => {
 };
 
 const FeatureCardSkeleton = ({ children }: { children: React.ReactNode }) => {
-  return <div className='w-full h-60'>{children}</div>;
+  return <div className='w-full h-60 '>{children}</div>;
 };
