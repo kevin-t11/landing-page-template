@@ -11,7 +11,7 @@ export const Navbar = () => {
     { label: 'FAQ', href: '#faq' },
   ];
   return (
-    <nav className='sticky top-5 max-w-5xl mx-auto rounded-full z-10 bg-background/1 backdrop-blur-sm border border-border/50'>
+    <nav className='sticky top-5 max-w-5xl mx-auto rounded-full z-100 bg-background/1 backdrop-blur-sm border border-border/50'>
       <div className='flex items-center justify-between h-16 px-4'>
         <div>
           <Logo />
