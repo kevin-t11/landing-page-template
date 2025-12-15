@@ -1,5 +1,6 @@
 'use client';
 
+import { InstaReelIcon, TiktokBrandIcon, YTShortsIcon } from '@/icons';
 import { cn } from '@/lib/utils';
 import { motion } from 'motion/react';
 import Image from 'next/image';
@@ -25,30 +26,39 @@ export const PodiumStage = () => {
   return (
     <div className='relative w-full flex items-end justify-center gap-4'>
       <PodiumBlock height='h-24' delay={0.2}>
-        <Avatar src='/avatar_1.avif' alt='User 1' />
+        <Avatar src='/avatar_1.avif' alt='User 1' icon={<YTShortsIcon />} />
         <div className='mb-8'>
-          <Avatar src='/avatar_2.avif' alt='User 2' />
+          <Avatar src='/avatar_2.avif' alt='User 2' icon={<InstaReelIcon />} />
         </div>
       </PodiumBlock>
 
       <PodiumBlock height='h-24' delay={0.1}>
-        <Avatar src='/avatar_3.avif' alt='User 3' />
+        <Avatar
+          src='/avatar_3.avif'
+          alt='User 3'
+          icon={<TiktokBrandIcon className='size-4' />}
+        />
         <div className='mb-8'>
-          <Avatar src='/avatar_4.avif' alt='User 4' />
+          <Avatar src='/avatar_4.avif' alt='User 4' icon={<YTShortsIcon />} />
         </div>
       </PodiumBlock>
 
       <PodiumBlock height='h-44' delay={0} isCenter>
         <div className='mb-2'>
-          <Avatar src='/avatar_5.avif' alt='Sandy' isMain />
+          <Avatar
+            src='/avatar_5.avif'
+            alt='Sandy'
+            isMain
+            icon={<TiktokBrandIcon className='size-4' />}
+          />
         </div>
       </PodiumBlock>
 
       <PodiumBlock height='h-20' delay={0.2}>
         <div className='mb-4'>
-          <Avatar src='/avatar_6.avif' alt='User 6' />
+          <Avatar src='/avatar_6.avif' alt='User 6' icon={<InstaReelIcon />} />
         </div>
-        <Avatar src='/avatar_7.avif' alt='User 7' />
+        <Avatar src='/avatar_7.avif' alt='User 7' icon={<TiktokBrandIcon />} />
       </PodiumBlock>
     </div>
   );
@@ -164,6 +174,8 @@ interface AvatarProps {
   isMain?: boolean;
   barHeight?: number;
   barDelay?: number;
+  icon?: React.ReactNode;
+  iconClassName?: string;
 }
 
 const Avatar = ({
@@ -172,6 +184,8 @@ const Avatar = ({
   isMain = false,
   barHeight = 90,
   barDelay = 0,
+  icon = <InstaReelIcon />,
+  iconClassName = 'size-5',
 }: AvatarProps) => {
   return (
     <motion.div
@@ -192,7 +206,7 @@ const Avatar = ({
       <div
         className={cn(
           'relative rounded-full border-[3px] border-white shadow-md overflow-hidden bg-gray-100',
-          isMain ? 'w-12 h-12 ring-2 ring-sky-300/80' : 'w-9 h-9'
+          isMain ? 'w-14 h-14 ring-2 ring-sky-300/80' : 'w-11 h-11'
         )}
       >
         <Image
@@ -203,6 +217,13 @@ const Avatar = ({
           className='w-full h-full object-cover'
         />
       </div>
+      <BrandIcon
+        className={cn(
+          'absolute bottom-3 right-0 rounded-full bg-accent p-px ring-1 ring-white',
+          iconClassName
+        )}
+        icon={icon}
+      />
 
       {/* Main User Tag (Floating Popup) */}
       {isMain && (
@@ -221,6 +242,7 @@ const Avatar = ({
               className='size-full object-cover'
             />
           </div>
+
           <span className='text-[11px] font-semibold text-gray-700 tracking-tight'>
             @sandykoshti
           </span>
@@ -239,6 +261,16 @@ const Avatar = ({
       <div className='w-[1.5px] h-5 bg-linear-to-b from-gray-300 via-gray-300/50 to-transparent -mt-px' />
     </motion.div>
   );
+};
+
+const BrandIcon = ({
+  className,
+  icon = <InstaReelIcon />,
+}: {
+  className: string;
+  icon: React.ReactNode;
+}) => {
+  return <div className={cn('flex items-center', className)}>{icon}</div>;
 };
 
 // 'use client';
