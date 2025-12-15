@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import { AiScriptStudio } from './features/ai-script-studio';
 import { CompetitiveSignals } from './features/competitive-signals';
-import { CreatorIntelligence } from './features/creator-intelligence';
+import { CreatorIntellegence } from './features/creator-intellegence';
 import { HookStyle } from './features/hook-style';
 import { PersonaCreation } from './features/persona-creation';
 import { ViralVideoXRay } from './features/viral-video-xray';
@@ -12,7 +12,7 @@ export const FeaturesSection = () => {
     {
       title: 'Creator Intelligence Search',
       description: 'Find winners before everyone else',
-      skeleton: <CreatorIntelligence />,
+      skeleton: <CreatorIntellegence />,
       className: 'col-span-3',
     },
     {
@@ -78,17 +78,21 @@ const FeatureCard = ({
   return (
     <div
       className={cn(
-        'border border-muted rounded-xl p-4 relative overflow-hidden ',
+        'border border-muted rounded-xl px-4 pt-4 relative overflow-hidden ',
         className
       )}
     >
-      <DottedGlowBackground opacity={0.1} backgroundOpacity={0.02} />
+      <DottedGlowBackground
+        opacity={0.05}
+        backgroundOpacity={0.02}
+        color='#00bcff'
+      />
       <div className='relative z-10'>
-        <FeatureCardSkeleton>{skeleton}</FeatureCardSkeleton>
         <div className='space-y-1'>
           <FeatureCardTitle title={title} />
           <FeatureCardDescription description={description} />
         </div>
+        <FeatureCardSkeleton>{skeleton}</FeatureCardSkeleton>
       </div>
     </div>
   );
@@ -96,7 +100,7 @@ const FeatureCard = ({
 
 const FeatureCardTitle = ({ title }: { title: string }) => {
   return (
-    <h3 className='text-xl font-bold text-left tracking-tight max-w-xl mx-auto font-sans'>
+    <h3 className='text-xl font-bold text-left tracking-tight max-w-xl mx-auto font-sans text-shadow-xs text-shadow-neutral-400'>
       {title}
     </h3>
   );
@@ -104,10 +108,12 @@ const FeatureCardTitle = ({ title }: { title: string }) => {
 
 const FeatureCardDescription = ({ description }: { description: string }) => {
   return (
-    <p className='text-muted-foreground text-sm text-left'>{description}</p>
+    <p className='text-muted-foreground text-sm text-left font-medium'>
+      {description}
+    </p>
   );
 };
 
 const FeatureCardSkeleton = ({ children }: { children: React.ReactNode }) => {
-  return <div className='w-full h-60 '>{children}</div>;
+  return <div className='w-full h-60'>{children}</div>;
 };
