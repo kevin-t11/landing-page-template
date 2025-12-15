@@ -100,7 +100,7 @@ const FeatureCard = ({
 
 const FeatureCardTitle = ({ title }: { title: string }) => {
   return (
-    <h3 className='text-xl font-bold text-left tracking-tight max-w-xl mx-auto font-sans text-shadow-xs text-shadow-neutral-400'>
+    <h3 className='text-xl font-bold text-left tracking-tight max-w-xl mx-auto font-sans text-shadow-xs text-shadow-neutral-300/80'>
       {title}
     </h3>
   );
