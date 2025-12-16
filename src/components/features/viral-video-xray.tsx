@@ -32,12 +32,14 @@ export const ViralVideoXRay = () => {
           style={{ opacity: outputOpacity }}
         >
           <Image
-            src='/input_video_xray.svg'
+            src='/input_video_xray.png'
             alt='Viral Video X-Ray output'
             fill
             sizes='100vw'
+            quality={70}
             className='object-cover scale-110 blur-[2px]'
             draggable={false}
+            loading='lazy'
           />
         </motion.div>
         <motion.div
@@ -46,12 +48,14 @@ export const ViralVideoXRay = () => {
           style={{ opacity: inputOpacity }}
         >
           <Image
-            src='/output_video_xray.svg'
+            src='/output_video_xray.png'
             alt='Viral Video X-Ray input'
             fill
             sizes='100vw'
+            quality={70}
             className='object-cover scale-110'
             draggable={false}
+            loading='lazy'
           />
         </motion.div>
       </div>
