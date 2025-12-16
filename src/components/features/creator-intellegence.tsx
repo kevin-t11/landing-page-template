@@ -203,28 +203,42 @@ const Avatar = ({
       }}
     >
       {/* Main Avatar */}
-      <div
-        className={cn(
-          'relative rounded-full border-[3px] border-white shadow-md overflow-hidden bg-gray-100',
-          isMain ? 'w-14 h-14 ring-2 ring-sky-300/80' : 'w-11 h-11'
-        )}
+      <motion.div
+        animate={isMain ? { y: [-4, 4, -4] } : { y: 0 }}
+        transition={
+          isMain
+            ? {
+                duration: 3,
+                ease: 'easeInOut',
+                repeat: Infinity,
+              }
+            : undefined
+        }
+        className='relative'
       >
-        <Image
-          src={src}
-          alt={alt}
-          width={48}
-          height={48}
-          className='w-full h-full object-cover'
-        />
-      </div>
-      <BrandIcon
-        className={cn(
-          'absolute bottom-3 right-0 rounded-full bg-accent p-px ring-1 ring-white',
-          iconClassName
-        )}
-        icon={icon}
-      />
+        <div
+          className={cn(
+            'relative rounded-full border-[3px] border-white shadow-md overflow-hidden bg-gray-100',
+            isMain ? 'w-14 h-14 ring-2 ring-sky-300/80' : 'w-11 h-11'
+          )}
+        >
+          <Image
+            src={src}
+            alt={alt}
+            width={48}
+            height={48}
+            className='w-full h-full object-cover'
+          />
+        </div>
 
+        <BrandIcon
+          className={cn(
+            'absolute -bottom-1 right-1 rounded-full bg-accent p-px ring-1 ring-white',
+            isMain ? 'size-5' : 'size-4'
+          )}
+          icon={icon}
+        />
+      </motion.div>
       {/* Main User Tag (Floating Popup) */}
       {isMain && (
         <motion.div
@@ -256,7 +270,6 @@ const Avatar = ({
           </div>
         </motion.div>
       )}
-
       {/* Stem */}
       <div className='w-[1.5px] h-5 bg-linear-to-b from-gray-300 via-gray-300/50 to-transparent -mt-px' />
     </motion.div>

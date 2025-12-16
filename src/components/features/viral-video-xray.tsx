@@ -36,7 +36,7 @@ export const ViralVideoXRay = () => {
             alt='Viral Video X-Ray output'
             fill
             sizes='100vw'
-            className='object-cover scale-110'
+            className='object-cover scale-110 blur-[2px]'
             draggable={false}
           />
         </motion.div>
