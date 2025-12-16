@@ -1,29 +1,39 @@
+import { cn } from '@/lib/utils';
 import researchAnimation from '@/lottie/research.json';
 import Lottie from 'lottie-react';
+import { BarChart3, BookOpen, Search } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useEffect, useState } from 'react';
 
 export const ResearchSkeleton = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setProgress((prev) => Math.min(prev + 2, 100)); // Faster progress for shorter feel
+    }, 50);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className='flex-1 bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 p-4 shadow-sm'>
-      <div className='flex items-center justify-between mb-4'>
-        <div className='flex items-center gap-1'>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4, delay: 1 }}
-            className='w-7 h-7'
-          >
+    <div className='w-full h-50 bg-white rounded-xl border border-gray-200 p-4 shadow-sm shadow-sky-100/50 relative overflow-hidden flex flex-col'>
+      {/* Header */}
+      <div className='flex items-center justify-between mb-1 px-1'>
+        <div className='flex items-center gap-2'>
+          <div className='w-10 h-10'>
             <Lottie
               animationData={researchAnimation}
               loop={true}
               autoplay={true}
-              style={{ width: '100%', height: '100%' }}
             />
-          </motion.div>
-
-          <span className='text-sm font-semibold text-gray-900 mt-1'>
-            Research
+          </div>
+          <span className='text-xs font-bold text-gray-700 uppercase tracking-wider'>
+            Researching
           </span>
+
+          <div className='text-xs font-mono text-sky-600'>
+            {Math.round(progress)}%
+          </div>
         </div>
 
         <div className='flex items-center gap-1.5'>
@@ -33,28 +43,76 @@ export const ResearchSkeleton = () => {
         </div>
       </div>
 
-      <div className='space-y-2.5 bg-gray-50 dark:bg-gray-950 rounded-lg p-4 mb-4'>
-        {[100, 88, 72, 95, 64].map((width, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 1.2 + idx * 0.1 }}
-            className='h-2 rounded-full bg-gray-200 dark:bg-gray-800 relative overflow-hidden'
-            style={{ width: `${width}%` }}
-          >
-            <motion.div
-              className='absolute inset-0 bg-linear-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent'
-              animate={{ x: ['-100%', '100%'] }}
-              transition={{
-                duration: 1.5,
-                repeat: Number.POSITIVE_INFINITY,
-                ease: 'linear',
-              }}
-            />
-          </motion.div>
-        ))}
+      {/* Cards Row */}
+      <div className='flex-1 flex gap-3 h-full pb-12'>
+        <ResearchCard
+          icon={<Search size={16} />}
+          title='Trends'
+          value='High Vol.'
+          active={progress > 15}
+        />
+        <ResearchCard
+          icon={<BookOpen size={16} />}
+          title='Sources'
+          value='3 Verified'
+          active={progress > 45}
+        />
+        <ResearchCard
+          icon={<BarChart3 size={16} />}
+          title='Stats'
+          value='98% Acc.'
+          active={progress > 75}
+        />
+      </div>
+
+      {/* Bottom Progress Bar */}
+      <div className='absolute bottom-0 left-0 w-full h-1 bg-gray-50'>
+        <motion.div
+          className='h-full bg-sky-500'
+          animate={{ width: `${progress}%` }}
+        />
       </div>
     </div>
   );
 };
+
+interface ResearchCardProps {
+  icon: React.ReactNode;
+  title: string;
+  value: string;
+  active: boolean;
+}
+const ResearchCard = ({ icon, title, value, active }: ResearchCardProps) => (
+  <div
+    className={cn(
+      'w-full  flex items-center justify-center gap-2 rounded-xl border transition-all duration-700 ease-in-out',
+      active ? 'bg-sky-50 border-sky-200 shadow-sm' : 'bg-white border-gray-100'
+    )}
+  >
+    <div className='flex items-center gap-4'>
+      <div
+        className={cn(
+          'p-2 rounded-full transition-all duration-700 ease-in-out',
+          active
+            ? 'bg-white text-sky-600 shadow-sm'
+            : 'bg-gray-50 text-gray-400'
+        )}
+      >
+        {icon}
+      </div>
+      <div className='text-center'>
+        <div className='text-[10px] font-semibold text-gray-400 uppercase tracking-wide mb-1'>
+          {title}
+        </div>
+        <div
+          className={cn(
+            'text-xs font-medium transition-all duration-700 ease-in-out',
+            active ? 'text-sky-900' : 'text-gray-300'
+          )}
+        >
+          {active ? value : 'Pending...'}
+        </div>
+      </div>
+    </div>
+  </div>
+);

@@ -3,8 +3,8 @@
 import { ArrowRightIcon, CheckedIcon } from '@/icons';
 import { cn } from '@/lib/utils';
 import { Loader } from 'lucide-react';
-import { AnimatePresence, motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { AnimatePresence, motion, useInView } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
 import { HookSkeleton } from './ai-script/hook';
 import { ResearchSkeleton } from './ai-script/research';
 import { ScriptSkeleton } from './ai-script/script';
@@ -13,87 +13,64 @@ import { TopicSkeleton } from './ai-script/topic';
 
 type StepStatus = 'pending' | 'processing' | 'complete';
 
-interface Step {
-  label: string;
-  skeleton: React.ReactNode;
-}
+const stepDefinitions = [
+  { label: 'TOPIC', skeleton: <TopicSkeleton /> },
+  { label: 'RESEARCH', skeleton: <ResearchSkeleton /> },
+  { label: 'HOOK', skeleton: <HookSkeleton /> },
+  { label: 'STYLE', skeleton: <StyleSkeleton /> },
+  { label: 'SCRIPT', skeleton: <ScriptSkeleton /> },
+];
 
 export const AiScriptStudio = () => {
-  const stepDefinitions: Step[] = [
-    { label: 'TOPIC', skeleton: <TopicSkeleton /> },
-    { label: 'RESEARCH', skeleton: <ResearchSkeleton /> },
-    { label: 'HOOK', skeleton: <HookSkeleton /> },
-    { label: 'STYLE', skeleton: <StyleSkeleton /> },
-    { label: 'SCRIPT', skeleton: <ScriptSkeleton /> },
-  ];
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: false, amount: 0.3 });
+  const [currentStep, setCurrentStep] = useState(0);
 
-  const [currentProcessingIndex, setCurrentProcessingIndex] = useState(0);
-
-  // Handle step progression
+  // Progress through steps when in view
   useEffect(() => {
-    if (currentProcessingIndex >= stepDefinitions.length) return;
+    if (!isInView) {
+      return;
+    }
+
+    if (currentStep >= stepDefinitions.length) {
+      const restartTimer = setTimeout(() => setCurrentStep(0), 5000);
+      return () => clearTimeout(restartTimer);
+    }
 
     const timer = setTimeout(() => {
-      setCurrentProcessingIndex((prev) => prev + 1);
-    }, 6000); // 6 seconds per step
+      setCurrentStep((prev) => prev + 1);
+    }, 5000);
 
     return () => clearTimeout(timer);
-  }, [currentProcessingIndex, stepDefinitions.length]);
-
-  // Handle restart after all steps complete
-  useEffect(() => {
-    const allComplete = currentProcessingIndex >= stepDefinitions.length;
-    if (!allComplete) return;
-
-    const restartTimer = setTimeout(() => {
-      setCurrentProcessingIndex(0); // Restart from the beginning
-    }, 5000); // 5 seconds delay after completion
-
-    return () => clearTimeout(restartTimer);
-  }, [currentProcessingIndex, stepDefinitions.length]);
+  }, [isInView, currentStep]);
 
   const getStepStatus = (index: number): StepStatus => {
-    const allComplete = currentProcessingIndex >= stepDefinitions.length;
-    if (allComplete) {
-      return 'complete';
-    }
-    if (index < currentProcessingIndex) {
-      return 'complete';
-    } else if (index === currentProcessingIndex) {
-      return 'processing';
-    } else {
-      return 'pending';
-    }
+    if (currentStep >= stepDefinitions.length) return 'complete';
+    if (index < currentStep) return 'complete';
+    if (index === currentStep) return 'processing';
+    return 'pending';
   };
 
-  const steps = stepDefinitions.map((step, idx) => ({
-    ...step,
-    status: getStepStatus(idx),
-  }));
-
-  // Show the last skeleton when all steps are complete, otherwise show the current processing one
-  const skeletonIndex =
-    currentProcessingIndex >= stepDefinitions.length
-      ? stepDefinitions.length - 1
-      : currentProcessingIndex;
-  const currentSkeleton = stepDefinitions[skeletonIndex]?.skeleton;
+  const skeletonIndex = Math.min(currentStep, stepDefinitions.length - 1);
 
   return (
-    <div className='w-full h-full flex flex-col gap-4 p-4 bg-white/40'>
+    <div
+      ref={containerRef}
+      className='w-full h-full flex flex-col gap-4 p-4 bg-white/40'
+    >
       <div className='flex items-center justify-center max-w-2xs mx-auto'>
-        {steps.map((step, idx) => {
-          const isComplete = step.status === 'complete';
-          const isProcessing = step.status === 'processing';
+        {stepDefinitions.map((step, idx) => {
+          const status = getStepStatus(idx);
+          const isComplete = status === 'complete';
+          const isProcessing = status === 'processing';
 
           return (
             <div key={step.label} className='flex items-center'>
-              {/* Step column */}
               <div className='flex flex-col items-center gap-2'>
                 <motion.div
                   initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
+                  animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ duration: 0.4, delay: idx * 0.15 }}
-                  className='relative'
                 >
                   <div
                     className={cn(
@@ -117,29 +94,28 @@ export const AiScriptStudio = () => {
                   </div>
                 </motion.div>
 
-                {/* Label — perfectly centered under icon */}
                 <motion.span
                   initial={{ opacity: 0, y: 5 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  animate={
+                    isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 5 }
+                  }
                   transition={{ delay: idx * 0.15 + 0.2 }}
                   className={cn(
                     'text-xs font-semibold text-center min-w-14 transition-colors duration-300',
-                    step.status === 'pending'
-                      ? 'text-gray-400'
-                      : step.status === 'processing'
-                        ? 'text-amber-600 dark:text-amber-400'
-                        : 'text-gray-700'
+                    status === 'pending' && 'text-gray-400',
+                    status === 'processing' &&
+                      'text-amber-600 dark:text-amber-400',
+                    status === 'complete' && 'text-gray-700'
                   )}
                 >
                   {step.label}
                 </motion.span>
               </div>
 
-              {/* Arrow between steps */}
-              {idx < steps.length - 1 && (
+              {idx < stepDefinitions.length - 1 && (
                 <motion.div
                   initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
+                  animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: idx * 0.15 + 0.3 }}
                 >
                   <ArrowRightIcon className='h-full w-16 text-gray-300 -translate-y-[8px]' />
@@ -150,20 +126,16 @@ export const AiScriptStudio = () => {
         })}
       </div>
 
-      {/* Show the currently processing skeleton, or the last one when all complete */}
       <AnimatePresence mode='wait'>
-        {currentSkeleton && (
+        {isInView && (
           <motion.div
             key={`skeleton-${skeletonIndex}`}
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -20, scale: 0.95 }}
-            transition={{
-              duration: 0.5,
-              ease: [0.4, 0, 0.2, 1],
-            }}
+            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
-            {currentSkeleton}
+            {stepDefinitions[skeletonIndex].skeleton}
           </motion.div>
         )}
       </AnimatePresence>
