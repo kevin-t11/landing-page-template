@@ -29,7 +29,7 @@ export const FeaturesSection = () => {
     },
     {
       title: 'AI Script Studio',
-      description: 'Idea → research → script, instantly',
+      description: 'Create high-performing scripts within seconds',
       skeleton: <AiScriptStudio />,
       className: 'col-span-3',
     },

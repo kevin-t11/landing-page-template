@@ -212,481 +212,270 @@ export const InstaReelIcon = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
-
-export const FolderVariant1Icon = (props: SVGProps<SVGSVGElement>) => {
+export const ArrowRightIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      width='196'
-      height='168'
-      viewBox='0 0 196 168'
-      fill='none'
       xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 56 18'
       {...props}
     >
-      <g filter='url(#filter0_d_1_164)'>
-        <rect x='7' y='3' width='182' height='154' rx='10.2992' fill='white' />
-        <rect
-          x='7.42913'
-          y='3.42913'
-          width='181.142'
-          height='153.142'
-          rx='9.87003'
-          stroke='#EDEDED'
-          strokeWidth='0.858263'
-        />
-        <g filter='url(#filter1_di_1_164)'>
-          <rect
-            x='16.4409'
-            y='27'
-            width='38.9062'
-            height='11.3744'
-            rx='5.68722'
-            fill='#EDEDED'
-          />
-        </g>
-        <g filter='url(#filter2_di_1_164)'>
-          <rect
-            x='59.4146'
-            y='27'
-            width='120.144'
-            height='11.3744'
-            rx='5.68722'
-            fill='#EDEDED'
-          />
-        </g>
-        <g filter='url(#filter3_di_1_164)'>
-          <rect
-            x='16.4409'
-            y='43.0231'
-            width='163.118'
-            height='11.3744'
-            rx='5.68722'
-            fill='#EDEDED'
-          />
-        </g>
-        <g filter='url(#filter4_di_1_164)'>
-          <rect
-            x='16.4409'
-            y='59.0461'
-            width='163.118'
-            height='11.3744'
-            rx='5.68722'
-            fill='#EDEDED'
-          />
-        </g>
-        <rect
-          x='16.4409'
-          y='77.3936'
-          width='163.118'
-          height='9.29727'
-          rx='4.64864'
-          fill='#EDEDED'
-        />
-        <rect
-          x='16.4409'
-          y='90.7584'
-          width='163.118'
-          height='9.29727'
-          rx='4.64864'
-          fill='#EDEDED'
-        />
-        <rect
-          x='16.4409'
-          y='104.123'
-          width='163.118'
-          height='9.29727'
-          rx='4.64864'
-          fill='#EDEDED'
-        />
-        <circle cx='24.1062' cy='128.059' r='7.66526' fill='#3291FF' />
-        <rect
-          x='35.8391'
-          y='123.809'
-          width='32.6971'
-          height='8.49938'
-          rx='4.24969'
-          fill='#EDEDED'
+      <path stroke='#E0E0E0' d='M0 8.5h56'></path>
+      <g clipPath='url(#rapid-dev-top-divider-mobile_svg__a)'>
+        <rect width='16' height='16' x='20' y='1' fill='#F7F7F7' rx='8'></rect>
+        <path
+          fill='#B8B8B8'
+          fillRule='evenodd'
+          d='M24.813 5.98a.5.5 0 0 1 .707 0l2.195 2.196a1.167 1.167 0 0 1 0 1.65L25.52 12.02a.5.5 0 1 1-.707-.707l2.195-2.195a.167.167 0 0 0 0-.236l-2.195-2.195a.5.5 0 0 1 0-.708Zm4.667 0a.5.5 0 0 1 .707 0l2.195 2.196a1.167 1.167 0 0 1 0 1.65l-2.195 2.195a.5.5 0 1 1-.707-.707l2.195-2.195a.167.167 0 0 0 0-.236L29.48 6.688a.5.5 0 0 1 0-.708'
+          clipRule='evenodd'
         />
       </g>
+      <rect width='17' height='17' x='19.5' y='0.5' stroke='#E0E0E0' rx='8.5' />
       <defs>
-        <filter
-          id='filter0_d_1_164'
-          x='0'
-          y='0'
-          width='196'
-          height='168'
-          filterUnits='userSpaceOnUse'
-          colorInterpolationFilters='sRGB'
-        >
-          <feFlood floodOpacity='0' result='BackgroundImageFix' />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feMorphology
-            radius='3'
-            operator='dilate'
-            in='SourceAlpha'
-            result='effect1_dropShadow_1_164'
-          />
-          <feOffset dy='4' />
-          <feGaussianBlur stdDeviation='2' />
-          <feComposite in2='hardAlpha' operator='out' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 0.267346 0 0 0 0 0.267346 0 0 0 0 0.267346 0 0 0 0.16 0'
-          />
-          <feBlend
-            mode='hard-light'
-            in2='BackgroundImageFix'
-            result='effect1_dropShadow_1_164'
-          />
-          <feBlend
-            mode='normal'
-            in='SourceGraphic'
-            in2='effect1_dropShadow_1_164'
-            result='shape'
-          />
-        </filter>
-        <filter
-          id='filter1_di_1_164'
-          x='16.4409'
-          y='27'
-          width='38.9062'
-          height='12.3745'
-          filterUnits='userSpaceOnUse'
-          colorInterpolationFilters='sRGB'
-        >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feMorphology
-            radius='1'
-            operator='erode'
-            in='SourceAlpha'
-            result='effect1_dropShadow_1_164'
-          />
-          <feOffset dy='1' />
-          <feGaussianBlur stdDeviation='0.5' />
-          <feComposite in2='hardAlpha' operator='out' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='BackgroundImageFix'
-            result='effect1_dropShadow_1_164'
-          />
-          <feBlend
-            mode='normal'
-            in='SourceGraphic'
-            in2='effect1_dropShadow_1_164'
-            result='shape'
-          />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feOffset dy='1' />
-          <feGaussianBlur stdDeviation='0.5' />
-          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='shape'
-            result='effect2_innerShadow_1_164'
-          />
-        </filter>
-        <filter
-          id='filter2_di_1_164'
-          x='59.4146'
-          y='27'
-          width='120.145'
-          height='12.3745'
-          filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
-        >
-          <feFlood floodOpacity='0' result='BackgroundImageFix' />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feMorphology
-            radius='1'
-            operator='erode'
-            in='SourceAlpha'
-            result='effect1_dropShadow_1_164'
-          />
-          <feOffset dy='1' />
-          <feGaussianBlur stdDeviation='0.5' />
-          <feComposite in2='hardAlpha' operator='out' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='BackgroundImageFix'
-            result='effect1_dropShadow_1_164'
-          />
-          <feBlend
-            mode='normal'
-            in='SourceGraphic'
-            in2='effect1_dropShadow_1_164'
-            result='shape'
-          />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feOffset dy='1' />
-          <feGaussianBlur stdDeviation='0.5' />
-          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='shape'
-            result='effect2_innerShadow_1_164'
-          />
-        </filter>
-        <filter
-          id='filter3_di_1_164'
-          x='16.4409'
-          y='43.0231'
-          width='163.118'
-          height='12.3745'
-          filterUnits='userSpaceOnUse'
-          colorInterpolationFilters='sRGB'
-        >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feMorphology
-            radius='1'
-            operator='erode'
-            in='SourceAlpha'
-            result='effect1_dropShadow_1_164'
-          />
-          <feOffset dy='1' />
-          <feGaussianBlur stdDeviation='0.5' />
-          <feComposite in2='hardAlpha' operator='out' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='BackgroundImageFix'
-            result='effect1_dropShadow_1_164'
-          />
-          <feBlend
-            mode='normal'
-            in='SourceGraphic'
-            in2='effect1_dropShadow_1_164'
-            result='shape'
-          />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feOffset dy='1' />
-          <feGaussianBlur stdDeviation='0.5' />
-          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='shape'
-            result='effect2_innerShadow_1_164'
-          />
-        </filter>
-        <filter
-          id='filter4_di_1_164'
-          x='16.4409'
-          y='59.0461'
-          width='163.118'
-          height='12.3745'
-          filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
-        >
-          <feFlood floodOpacity='0' result='BackgroundImageFix' />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feMorphology
-            radius='1'
-            operator='erode'
-            in='SourceAlpha'
-            result='effect1_dropShadow_1_164'
-          />
-          <feOffset dy='1' />
-          <feGaussianBlur stdDeviation='0.5' />
-          <feComposite in2='hardAlpha' operator='out' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='BackgroundImageFix'
-            result='effect1_dropShadow_1_164'
-          />
-          <feBlend
-            mode='normal'
-            in='SourceGraphic'
-            in2='effect1_dropShadow_1_164'
-            result='shape'
-          />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feOffset dy='1' />
-          <feGaussianBlur stdDeviation='0.5' />
-          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='shape'
-            result='effect2_innerShadow_1_164'
-          />
-        </filter>
+        <clipPath id='rapid-dev-top-divider-mobile_svg__a'>
+          <rect width='16' height='16' x='20' y='1' fill='#fff' rx='8'></rect>
+        </clipPath>
       </defs>
     </svg>
   );
 };
 
-export const FileVariant1Icon = (props: SVGProps<SVGSVGElement>) => {
+export const CheckedIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
-      width='158'
-      height='195'
-      viewBox='0 0 158 195'
-      fill='none'
-      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 35 35'
+      overflow='visible'
+      id='svg2074723078_1882'
       {...props}
     >
-      <g filter='url(#filter0_di_1_40)'>
-        <rect
-          x='8.9386'
-          y='4.61346'
-          width='139.846'
-          height='176.609'
-          rx='24.4919'
-          fill='url(#paint0_linear_1_40)'
+      <g>
+        <path d='M 0 0 L 35 0 L 35 35 L 0 35 Z' fill='transparent' />
+        <g transform='translate(6.5 6.5)'>
+          <g>
+            <g>
+              <defs>
+                <linearGradient
+                  id='svg2074723078_1882_idsomi6zwITb_5g-64190820'
+                  x1='0.49751243781094523'
+                  x2='0.5024875621890548'
+                  y1='0'
+                  y2='1'
+                >
+                  <stop
+                    offset='0'
+                    stopColor='rgb(255,255,255)'
+                    stopOpacity='1'
+                  />
+                  <stop
+                    offset='1'
+                    stopColor='rgb(150,213,250)'
+                    stopOpacity='1'
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d='M 22 11 C 22 17.075 17.075 22 11 22 C 4.925 22 0 17.075 0 11 C 0 4.925 4.925 0 11 0 C 17.075 0 22 4.925 22 11 Z M 14.793 7.293 L 9.5 12.586 L 7.707 10.793 C 7.315 10.414 6.691 10.419 6.305 10.805 C 5.919 11.191 5.914 11.815 6.293 12.207 L 8.793 14.707 C 9.183 15.097 9.817 15.097 10.207 14.707 L 16.207 8.707 C 16.597 8.317 16.597 7.683 16.207 7.293 C 15.817 6.903 15.183 6.903 14.793 7.293 Z'
+                fill='url(#svg2074723078_1882_idsomi6zwITb_5g-64190820)'
+              />
+            </g>
+          </g>
+        </g>
+        <path
+          d='M 0.55 17.5 C 0.55 8.139 8.139 0.55 17.5 0.55 C 26.861 0.55 34.45 8.139 34.45 17.5 C 34.45 26.861 26.861 34.45 17.5 34.45 C 8.139 34.45 0.55 26.861 0.55 17.5 Z'
+          fill='transparent'
+          strokeWidth='0.1'
+          stroke='rgb(255,255,255)'
+          strokeMiterlimit='10'
+          strokeDasharray=''
+          opacity='0.25'
         />
-        <rect
-          x='9.8806'
-          y='5.55546'
-          width='137.962'
-          height='174.725'
-          rx='23.55'
-          stroke='white'
-          stroke-opacity='0.26'
-          stroke-width='1.884'
+        <path
+          d='M 2.625 17.5 C 2.625 9.285 9.285 2.625 17.5 2.625 C 25.715 2.625 32.375 9.285 32.375 17.5 C 32.375 25.715 25.715 32.375 17.5 32.375 C 9.285 32.375 2.625 25.715 2.625 17.5 Z'
+          fill='transparent'
+          strokeWidth='0.25'
+          stroke='rgb(255,255,255)'
+          strokeMiterlimit='10'
+          strokeDasharray=''
+          opacity='0.6'
+        />
+        <path
+          d='M 4.7 17.5 C 4.7 10.431 10.431 4.7 17.5 4.7 C 24.569 4.7 30.3 10.431 30.3 17.5 C 30.3 24.569 24.569 30.3 17.5 30.3 C 10.431 30.3 4.7 24.569 4.7 17.5 Z'
+          fill='transparent'
+          strokeWidth='0.4'
+          stroke='rgb(255,255,255)'
+          strokeMiterlimit='10'
+          strokeDasharray=''
+          opacity='0.8'
         />
       </g>
-      <defs>
-        <filter
-          id='filter0_di_1_40'
-          x='-3.8147e-06'
-          y='-8.10623e-06'
-          width='157.723'
-          height='194.487'
-          filterUnits='userSpaceOnUse'
-          color-interpolation-filters='sRGB'
-        >
-          <feFlood flood-opacity='0' result='BackgroundImageFix' />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feOffset dy='4.32513' />
-          <feGaussianBlur stdDeviation='4.4693' />
-          <feComposite in2='hardAlpha' operator='out' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 0.945098 0 0 0 0 0.341176 0 0 0 0 0.576471 0 0 0 0.12 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='BackgroundImageFix'
-            result='effect1_dropShadow_1_40'
-          />
-          <feBlend
-            mode='normal'
-            in='SourceGraphic'
-            in2='effect1_dropShadow_1_40'
-            result='shape'
-          />
-          <feColorMatrix
-            in='SourceAlpha'
-            type='matrix'
-            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
-            result='hardAlpha'
-          />
-          <feOffset dy='2.88342' />
-          <feGaussianBlur stdDeviation='5.19016' />
-          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
-          <feColorMatrix
-            type='matrix'
-            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
-          />
-          <feBlend
-            mode='normal'
-            in2='shape'
-            result='effect2_innerShadow_1_40'
-          />
-        </filter>
-        <linearGradient
-          id='paint0_linear_1_40'
-          x1='16.868'
-          y1='9.65945'
-          x2='127.88'
-          y2='188.431'
-          gradientUnits='userSpaceOnUse'
-        >
-          <stop stop-color='#76C4FF' />
-          <stop offset='0.666658' stop-color='#2182DC' />
-        </linearGradient>
-      </defs>
+    </svg>
+  );
+};
+
+export const GenerateIcon = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      width='24'
+      height='24'
+      viewBox='0 0 24 24'
+      {...props}
+    >
+      <title>ufo</title>
+      <g fill='none'>
+        <path
+          d='M15.5 8.5C15.5 10.9853 13.4853 13 11 13C8.51472 13 6.5 10.9853 6.5 8.5C6.5 6.01472 8.51472 4 11 4C13.4853 4 15.5 6.01472 15.5 8.5Z'
+          fill='url(#1752500502810-5879917_ufo_existing_2_vf6ibsrfd)'
+          data-glass='origin'
+          mask='url(#1752500502810-5879917_ufo_mask_n8ii5fwel)'
+        ></path>
+        <path
+          d='M15.5 8.5C15.5 10.9853 13.4853 13 11 13C8.51472 13 6.5 10.9853 6.5 8.5C6.5 6.01472 8.51472 4 11 4C13.4853 4 15.5 6.01472 15.5 8.5Z'
+          fill='url(#1752500502810-5879917_ufo_existing_2_vf6ibsrfd)'
+          data-glass='clone'
+          filter='url(#1752500502810-5879917_ufo_filter_ywtj7hs6s)'
+          clipPath='url(#1752500502810-5879917_ufo_clipPath_n2ibz6v4n)'
+        ></path>
+        <path
+          d='M22.531 7.53373C23.0313 9.40086 18.6798 12.1891 12.8117 13.7615C6.94355 15.3338 1.78092 15.0949 1.28062 13.2277C0.780326 11.3606 5.13181 8.57236 10.9999 7C16.8681 5.42764 22.0307 5.6666 22.531 7.53373Z'
+          fill='url(#1752500502810-5879917_ufo_existing_3_uk6us457n)'
+          data-glass='blur'
+        ></path>
+        <path
+          d='M21.8065 7.72782C21.7704 7.59296 21.6149 7.35994 21.063 7.13746C20.5258 6.92094 19.7436 6.77291 18.7438 6.72663C16.7533 6.63449 14.0747 6.95256 11.1941 7.72442C8.31344 8.49628 5.8346 9.56016 4.15685 10.6352C3.31421 11.1751 2.71078 11.6945 2.35383 12.1506C1.98707 12.6192 1.96894 12.8987 2.00507 13.0336C2.0412 13.1685 2.19667 13.4015 2.74863 13.624C3.28581 13.8405 4.06806 13.9885 5.06777 14.0348C7.05826 14.1269 9.73695 13.8089 12.6176 13.037L12.8117 13.7615L12.2633 13.9033C6.62516 15.317 1.76527 15.0365 1.28062 13.2277C0.780368 11.3606 5.13184 8.57233 10.9999 6.99998L11.5483 6.8581C17.1864 5.44447 22.0463 5.72498 22.531 7.53371L22.5633 7.71106C22.758 9.57361 18.4968 12.2381 12.8117 13.7615L12.6176 13.037C15.4982 12.2652 17.977 11.2013 19.6548 10.1262C20.4974 9.5863 21.1008 9.06697 21.4578 8.61087C21.8245 8.14221 21.8427 7.86267 21.8065 7.72782Z'
+          fill='url(#1752500502810-5879917_ufo_existing_4_nypslaztr)'
+        ></path>
+        <path
+          data-figma-bg-blur-radius='3'
+          d='M11.8313 10.0265C9.71532 10.5935 8.14623 11.5989 8.32663 12.2722L8.87111 20.1381C8.94368 21.1865 9.81536 22 10.8663 22L21.2412 22C22.0169 22 22.4972 21.1552 22.1006 20.4886L15.9892 10.219C15.8088 9.54574 13.9473 9.45957 11.8313 10.0265Z'
+          fill='url(#1752500502810-5879917_ufo_existing_5_9l1e71z01)'
+        ></path>
+        <path
+          d='M5.07314 1.88824L4.44324 0.301014C4.28398 -0.1003 3.71603 -0.10035 3.55669 0.300936L2.92644 1.88824C2.91951 1.90563 2.90577 1.91938 2.88838 1.9263L1.30091 2.55671C0.899694 2.71604 0.899695 3.28396 1.30092 3.44329L2.88838 4.0737C2.90577 4.08063 2.91951 4.09437 2.92644 4.11176L3.55668 5.69906C3.71602 6.10035 4.28397 6.1003 4.44324 5.69899L5.07314 4.11176C5.08008 4.0943 5.09399 4.08061 5.11147 4.0737L6.69907 3.4433C7.10031 3.28398 7.10031 2.71602 6.69907 2.5567L5.11147 1.9263C5.09399 1.91939 5.08008 1.9057 5.07314 1.88824Z'
+          fill='url(#1752500502810-5879917_ufo_existing_6_ldle12y0e)'
+        ></path>
+        <path
+          data-figma-bg-blur-radius='3'
+          d='M20 2.25C20 2.94036 19.4404 3.5 18.75 3.5C18.0596 3.5 17.5 2.94036 17.5 2.25C17.5 1.55964 18.0596 1 18.75 1C19.4404 1 20 1.55964 20 2.25Z'
+          fill='url(#1752500502810-5879917_ufo_existing_7_8qjzkjuhg)'
+        ></path>
+        <path
+          d='M19.25 2.25C19.25 1.97386 19.0261 1.75 18.75 1.75C18.4739 1.75 18.25 1.97386 18.25 2.25C18.25 2.52614 18.4739 2.75 18.75 2.75V3.5C18.0596 3.5 17.5 2.94036 17.5 2.25C17.5 1.55964 18.0596 1 18.75 1C19.4404 1 20 1.55964 20 2.25C20 2.94036 19.4404 3.5 18.75 3.5V2.75C19.0261 2.75 19.25 2.52614 19.25 2.25Z'
+          fill='url(#1752500502810-5879917_ufo_existing_8_mu2amxwzb)'
+        ></path>
+        <defs>
+          <linearGradient
+            id='1752500502810-5879917_ufo_existing_2_vf6ibsrfd'
+            x1='11'
+            y1='4'
+            x2='11'
+            y2='13'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop stopColor='#575757'></stop>
+            <stop offset='1' stopColor='#151515'></stop>
+          </linearGradient>
+          <linearGradient
+            id='1752500502810-5879917_ufo_existing_3_uk6us457n'
+            x1='11'
+            y1='7'
+            x2='12.812'
+            y2='13.761'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop stopColor='#E3E3E5' stopOpacity='.6'></stop>
+            <stop offset='1' stopColor='#BBBBC0' stopOpacity='.6'></stop>
+          </linearGradient>
+          <linearGradient
+            id='1752500502810-5879917_ufo_existing_4_nypslaztr'
+            x1='11'
+            y1='7'
+            x2='12.049'
+            y2='10.916'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop stopColor='#fff'></stop>
+            <stop offset='1' stopColor='#fff' stopOpacity='0'></stop>
+          </linearGradient>
+          <linearGradient
+            id='1752500502810-5879917_ufo_existing_5_9l1e71z01'
+            x1='12.727'
+            y1='9.786'
+            x2='16.469'
+            y2='23.75'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop stopColor='#151515'></stop>
+            <stop offset='1' stopColor='#575757'></stop>
+          </linearGradient>
+          <linearGradient
+            id='1752500502810-5879917_ufo_existing_6_ldle12y0e'
+            x1='4'
+            y1='0'
+            x2='4'
+            y2='6'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop stopColor='#575757'></stop>
+            <stop offset='1' stopColor='#151515'></stop>
+          </linearGradient>
+          <linearGradient
+            id='1752500502810-5879917_ufo_existing_7_8qjzkjuhg'
+            x1='18.75'
+            y1='1'
+            x2='18.75'
+            y2='3.5'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop stopColor='#E3E3E5' stopOpacity='.6'></stop>
+            <stop offset='1' stopColor='#BBBBC0' stopOpacity='.6'></stop>
+          </linearGradient>
+          <linearGradient
+            id='1752500502810-5879917_ufo_existing_8_mu2amxwzb'
+            x1='18.75'
+            y1='1'
+            x2='18.75'
+            y2='2.448'
+            gradientUnits='userSpaceOnUse'
+          >
+            <stop stopColor='#fff'></stop>
+            <stop offset='1' stopColor='#fff' stopOpacity='0'></stop>
+          </linearGradient>
+          <filter
+            id='1752500502810-5879917_ufo_filter_ywtj7hs6s'
+            x='-100%'
+            y='-100%'
+            width='400%'
+            height='400%'
+            filterUnits='objectBoundingBox'
+            primitiveUnits='userSpaceOnUse'
+          >
+            <feGaussianBlur
+              stdDeviation='2'
+              x='0%'
+              y='0%'
+              width='100%'
+              height='100%'
+              in='SourceGraphic'
+              edgeMode='none'
+              result='blur'
+            ></feGaussianBlur>
+          </filter>
+          <clipPath id='1752500502810-5879917_ufo_clipPath_n2ibz6v4n'>
+            <path
+              d='M22.531 7.53373C23.0313 9.40086 18.6798 12.1891 12.8117 13.7615C6.94355 15.3338 1.78092 15.0949 1.28062 13.2277C0.780326 11.3606 5.13181 8.57236 10.9999 7C16.8681 5.42764 22.0307 5.6666 22.531 7.53373Z'
+              fill='url(#1752500502810-5879917_ufo_existing_3_uk6us457n)'
+            ></path>
+          </clipPath>
+          <mask id='1752500502810-5879917_ufo_mask_n8ii5fwel'>
+            <rect width='100%' height='100%' fill='#FFF'></rect>
+            <path
+              d='M22.531 7.53373C23.0313 9.40086 18.6798 12.1891 12.8117 13.7615C6.94355 15.3338 1.78092 15.0949 1.28062 13.2277C0.780326 11.3606 5.13181 8.57236 10.9999 7C16.8681 5.42764 22.0307 5.6666 22.531 7.53373Z'
+              fill='#000'
+            ></path>
+          </mask>
+        </defs>
+      </g>
     </svg>
   );
 };
