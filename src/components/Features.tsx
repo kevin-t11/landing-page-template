@@ -83,7 +83,7 @@ const FeatureCard = ({
       )}
     >
       <DottedGlowBackground
-        opacity={0.05}
+        opacity={0.1}
         backgroundOpacity={0.02}
         color='#00bcff'
       />

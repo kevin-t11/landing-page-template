@@ -212,3 +212,481 @@ export const InstaReelIcon = (props: SVGProps<SVGSVGElement>) => {
     </svg>
   );
 };
+
+export const FolderVariant1Icon = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width='196'
+      height='168'
+      viewBox='0 0 196 168'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      {...props}
+    >
+      <g filter='url(#filter0_d_1_164)'>
+        <rect x='7' y='3' width='182' height='154' rx='10.2992' fill='white' />
+        <rect
+          x='7.42913'
+          y='3.42913'
+          width='181.142'
+          height='153.142'
+          rx='9.87003'
+          stroke='#EDEDED'
+          strokeWidth='0.858263'
+        />
+        <g filter='url(#filter1_di_1_164)'>
+          <rect
+            x='16.4409'
+            y='27'
+            width='38.9062'
+            height='11.3744'
+            rx='5.68722'
+            fill='#EDEDED'
+          />
+        </g>
+        <g filter='url(#filter2_di_1_164)'>
+          <rect
+            x='59.4146'
+            y='27'
+            width='120.144'
+            height='11.3744'
+            rx='5.68722'
+            fill='#EDEDED'
+          />
+        </g>
+        <g filter='url(#filter3_di_1_164)'>
+          <rect
+            x='16.4409'
+            y='43.0231'
+            width='163.118'
+            height='11.3744'
+            rx='5.68722'
+            fill='#EDEDED'
+          />
+        </g>
+        <g filter='url(#filter4_di_1_164)'>
+          <rect
+            x='16.4409'
+            y='59.0461'
+            width='163.118'
+            height='11.3744'
+            rx='5.68722'
+            fill='#EDEDED'
+          />
+        </g>
+        <rect
+          x='16.4409'
+          y='77.3936'
+          width='163.118'
+          height='9.29727'
+          rx='4.64864'
+          fill='#EDEDED'
+        />
+        <rect
+          x='16.4409'
+          y='90.7584'
+          width='163.118'
+          height='9.29727'
+          rx='4.64864'
+          fill='#EDEDED'
+        />
+        <rect
+          x='16.4409'
+          y='104.123'
+          width='163.118'
+          height='9.29727'
+          rx='4.64864'
+          fill='#EDEDED'
+        />
+        <circle cx='24.1062' cy='128.059' r='7.66526' fill='#3291FF' />
+        <rect
+          x='35.8391'
+          y='123.809'
+          width='32.6971'
+          height='8.49938'
+          rx='4.24969'
+          fill='#EDEDED'
+        />
+      </g>
+      <defs>
+        <filter
+          id='filter0_d_1_164'
+          x='0'
+          y='0'
+          width='196'
+          height='168'
+          filterUnits='userSpaceOnUse'
+          colorInterpolationFilters='sRGB'
+        >
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feMorphology
+            radius='3'
+            operator='dilate'
+            in='SourceAlpha'
+            result='effect1_dropShadow_1_164'
+          />
+          <feOffset dy='4' />
+          <feGaussianBlur stdDeviation='2' />
+          <feComposite in2='hardAlpha' operator='out' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 0.267346 0 0 0 0 0.267346 0 0 0 0 0.267346 0 0 0 0.16 0'
+          />
+          <feBlend
+            mode='hard-light'
+            in2='BackgroundImageFix'
+            result='effect1_dropShadow_1_164'
+          />
+          <feBlend
+            mode='normal'
+            in='SourceGraphic'
+            in2='effect1_dropShadow_1_164'
+            result='shape'
+          />
+        </filter>
+        <filter
+          id='filter1_di_1_164'
+          x='16.4409'
+          y='27'
+          width='38.9062'
+          height='12.3745'
+          filterUnits='userSpaceOnUse'
+          colorInterpolationFilters='sRGB'
+        >
+          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feMorphology
+            radius='1'
+            operator='erode'
+            in='SourceAlpha'
+            result='effect1_dropShadow_1_164'
+          />
+          <feOffset dy='1' />
+          <feGaussianBlur stdDeviation='0.5' />
+          <feComposite in2='hardAlpha' operator='out' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='BackgroundImageFix'
+            result='effect1_dropShadow_1_164'
+          />
+          <feBlend
+            mode='normal'
+            in='SourceGraphic'
+            in2='effect1_dropShadow_1_164'
+            result='shape'
+          />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feOffset dy='1' />
+          <feGaussianBlur stdDeviation='0.5' />
+          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='shape'
+            result='effect2_innerShadow_1_164'
+          />
+        </filter>
+        <filter
+          id='filter2_di_1_164'
+          x='59.4146'
+          y='27'
+          width='120.145'
+          height='12.3745'
+          filterUnits='userSpaceOnUse'
+          color-interpolation-filters='sRGB'
+        >
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feMorphology
+            radius='1'
+            operator='erode'
+            in='SourceAlpha'
+            result='effect1_dropShadow_1_164'
+          />
+          <feOffset dy='1' />
+          <feGaussianBlur stdDeviation='0.5' />
+          <feComposite in2='hardAlpha' operator='out' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='BackgroundImageFix'
+            result='effect1_dropShadow_1_164'
+          />
+          <feBlend
+            mode='normal'
+            in='SourceGraphic'
+            in2='effect1_dropShadow_1_164'
+            result='shape'
+          />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feOffset dy='1' />
+          <feGaussianBlur stdDeviation='0.5' />
+          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='shape'
+            result='effect2_innerShadow_1_164'
+          />
+        </filter>
+        <filter
+          id='filter3_di_1_164'
+          x='16.4409'
+          y='43.0231'
+          width='163.118'
+          height='12.3745'
+          filterUnits='userSpaceOnUse'
+          colorInterpolationFilters='sRGB'
+        >
+          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feMorphology
+            radius='1'
+            operator='erode'
+            in='SourceAlpha'
+            result='effect1_dropShadow_1_164'
+          />
+          <feOffset dy='1' />
+          <feGaussianBlur stdDeviation='0.5' />
+          <feComposite in2='hardAlpha' operator='out' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='BackgroundImageFix'
+            result='effect1_dropShadow_1_164'
+          />
+          <feBlend
+            mode='normal'
+            in='SourceGraphic'
+            in2='effect1_dropShadow_1_164'
+            result='shape'
+          />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feOffset dy='1' />
+          <feGaussianBlur stdDeviation='0.5' />
+          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='shape'
+            result='effect2_innerShadow_1_164'
+          />
+        </filter>
+        <filter
+          id='filter4_di_1_164'
+          x='16.4409'
+          y='59.0461'
+          width='163.118'
+          height='12.3745'
+          filterUnits='userSpaceOnUse'
+          color-interpolation-filters='sRGB'
+        >
+          <feFlood floodOpacity='0' result='BackgroundImageFix' />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feMorphology
+            radius='1'
+            operator='erode'
+            in='SourceAlpha'
+            result='effect1_dropShadow_1_164'
+          />
+          <feOffset dy='1' />
+          <feGaussianBlur stdDeviation='0.5' />
+          <feComposite in2='hardAlpha' operator='out' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='BackgroundImageFix'
+            result='effect1_dropShadow_1_164'
+          />
+          <feBlend
+            mode='normal'
+            in='SourceGraphic'
+            in2='effect1_dropShadow_1_164'
+            result='shape'
+          />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feOffset dy='1' />
+          <feGaussianBlur stdDeviation='0.5' />
+          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='shape'
+            result='effect2_innerShadow_1_164'
+          />
+        </filter>
+      </defs>
+    </svg>
+  );
+};
+
+export const FileVariant1Icon = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      width='158'
+      height='195'
+      viewBox='0 0 158 195'
+      fill='none'
+      xmlns='http://www.w3.org/2000/svg'
+      {...props}
+    >
+      <g filter='url(#filter0_di_1_40)'>
+        <rect
+          x='8.9386'
+          y='4.61346'
+          width='139.846'
+          height='176.609'
+          rx='24.4919'
+          fill='url(#paint0_linear_1_40)'
+        />
+        <rect
+          x='9.8806'
+          y='5.55546'
+          width='137.962'
+          height='174.725'
+          rx='23.55'
+          stroke='white'
+          stroke-opacity='0.26'
+          stroke-width='1.884'
+        />
+      </g>
+      <defs>
+        <filter
+          id='filter0_di_1_40'
+          x='-3.8147e-06'
+          y='-8.10623e-06'
+          width='157.723'
+          height='194.487'
+          filterUnits='userSpaceOnUse'
+          color-interpolation-filters='sRGB'
+        >
+          <feFlood flood-opacity='0' result='BackgroundImageFix' />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feOffset dy='4.32513' />
+          <feGaussianBlur stdDeviation='4.4693' />
+          <feComposite in2='hardAlpha' operator='out' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 0.945098 0 0 0 0 0.341176 0 0 0 0 0.576471 0 0 0 0.12 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='BackgroundImageFix'
+            result='effect1_dropShadow_1_40'
+          />
+          <feBlend
+            mode='normal'
+            in='SourceGraphic'
+            in2='effect1_dropShadow_1_40'
+            result='shape'
+          />
+          <feColorMatrix
+            in='SourceAlpha'
+            type='matrix'
+            values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+            result='hardAlpha'
+          />
+          <feOffset dy='2.88342' />
+          <feGaussianBlur stdDeviation='5.19016' />
+          <feComposite in2='hardAlpha' operator='arithmetic' k2='-1' k3='1' />
+          <feColorMatrix
+            type='matrix'
+            values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.25 0'
+          />
+          <feBlend
+            mode='normal'
+            in2='shape'
+            result='effect2_innerShadow_1_40'
+          />
+        </filter>
+        <linearGradient
+          id='paint0_linear_1_40'
+          x1='16.868'
+          y1='9.65945'
+          x2='127.88'
+          y2='188.431'
+          gradientUnits='userSpaceOnUse'
+        >
+          <stop stop-color='#76C4FF' />
+          <stop offset='0.666658' stop-color='#2182DC' />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+};
