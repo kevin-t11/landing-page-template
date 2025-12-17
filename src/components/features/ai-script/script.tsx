@@ -80,7 +80,7 @@ export const ScriptSkeleton = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          className='absolute bottom-6 right-4 z-20'
+          className='absolute bottom-14 right-4 z-20'
         >
           <div className='bg-sky-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg shadow-sky-500/30 flex items-center gap-1'>
             <span>Done</span>

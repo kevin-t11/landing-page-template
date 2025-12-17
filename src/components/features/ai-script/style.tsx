@@ -66,7 +66,10 @@ export const StyleSkeleton = () => {
             />
           </motion.div>
 
-          <span className='text-sm font-semibold text-gray-900 '>Style</span>
+          <span className='text-sm font-semibold text-gray-900 '>
+            {' '}
+            TONE & STYLE
+          </span>
         </div>
 
         <div className='flex items-center gap-1.5'>

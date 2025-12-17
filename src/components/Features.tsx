@@ -34,15 +34,15 @@ export const FeaturesSection = () => {
       className: 'col-span-3',
     },
     {
-      title: 'Persona-Based Creation',
-      description: 'Content that sounds like you',
-      skeleton: <PersonaCreation />,
-      className: 'col-span-3',
-    },
-    {
       title: 'Competitive Signals',
       description: "Spot trends before they're saturated",
       skeleton: <CompetitiveSignals />,
+      className: 'col-span-3',
+    },
+    {
+      title: 'Persona-Based Creation',
+      description: 'Content that sounds like you',
+      skeleton: <PersonaCreation />,
       className: 'col-span-2',
     },
   ];
