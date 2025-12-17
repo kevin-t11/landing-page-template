@@ -19,7 +19,7 @@ export const HeroSection = () => {
 
 export const HeroTitle = () => {
   return (
-    <h1 className='text-6xl font-bold text-center tracking-tighter max-w-xl mx-auto font-sans'>
+    <h1 className='md:text-6xl text-4xl font-bold text-center tracking-tighter max-w-xl mx-auto font-sans'>
       <span className='flex items-center gap-1 ml-6'>
         <TextAnimate
           once
@@ -42,7 +42,7 @@ export const HeroTitle = () => {
             filter: { duration: 0.3, delay: 0.1 },
           }}
         >
-          <HeroCloseIcon className='inline-block size-16' />
+          <HeroCloseIcon className='inline-block md:size-16 size-12' />
         </motion.div>
         <TextAnimate
           once
@@ -89,7 +89,7 @@ export const HeroTitle = () => {
               filter: { duration: 0.3, delay: 0.9 },
             }}
           >
-            <HeroCTAIcon className='inline-block size-20' />
+            <HeroCTAIcon className='inline-block md:size-20 size-16' />
           </motion.div>
         </span>
       </span>
@@ -99,7 +99,7 @@ export const HeroTitle = () => {
 
 export const HeroDescription = () => {
   return (
-    <p className='text-lg text-center text-muted-foreground max-w-3xl mx-auto font-medium mt-4'>
+    <p className='md:text-lg max-w-sm md:max-w-3xl text-base text-center text-muted-foreground mx-auto font-medium mt-4'>
       Save <span className='font-bold'>+15 hours</span> weekly. Discover winning
       content, analyze data-driven insights, and rewrite scripts with AI in
       seconds.

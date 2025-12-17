@@ -10,10 +10,10 @@ export default function Page() {
     <BackgroundPattern>
       <Container>
         <Navbar />
-        {/* <HeroSection />
+        <HeroSection />
         <HeroImage />
         <SectionSeparator className='-mt-24 relative z-10' />
-        <FeaturesSection /> */}
+        <FeaturesSection />
       </Container>
     </BackgroundPattern>
   );
@@ -27,7 +27,7 @@ const SectionSeparator = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        'mx-auto flex h-8 w-full max-w-[596px] items-center gap-6 px-4 mb-32',
+        'mx-auto flex h-8 w-full max-w-xs md:max-w-[596px] items-center gap-6 px-4 mb-32',
         className
       )}
     >
