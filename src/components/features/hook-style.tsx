@@ -59,7 +59,7 @@ export const HookStyle = () => {
     'absolute inset-x-4 bottom-2 h-36 rounded-xl border border-sky-100/10 bg-linear-to-b from-sky-100/70 to-sky-100/40 shadow-lg shadow-sky-500/20 backdrop-blur-sm transition-all duration-500';
 
   return (
-    <div className='z-10 p-10 relative left-5'>
+    <div className='z-10 p-10 relative flex items-center justify-center'>
       <div
         className='group relative w-60 h-48 select-none'
         style={{ perspective: 1000 }}

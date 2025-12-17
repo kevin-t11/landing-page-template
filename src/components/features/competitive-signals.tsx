@@ -85,14 +85,14 @@ export const CompetitiveSignals = () => {
   return (
     <motion.div
       ref={containerRef}
-      className='w-full h-60 p-4 flex items-center gap-6 relative overflow-hidden'
+      className='w-full h-60 md:p-4 p-3 flex items-center md:gap-6 gap-4 relative overflow-hidden'
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
       {/* Left: Radar Visual */}
-      <div className='w-1/3 h-full flex items-center justify-center relative'>
-        <div className='relative w-32 h-32 flex items-center justify-center'>
+      <div className='md:w-1/3 w-full md:h-full h-32 flex items-center justify-center relative'>
+        <div className='relative md:size-32 md:mt-0 -mt-12 size-24 flex items-center justify-center'>
           <div className='absolute inset-0 bg-white'>
             {/* Radar Rings */}
             {[1, 2, 3].map((r) => (
@@ -132,7 +132,7 @@ export const CompetitiveSignals = () => {
             return (
               <motion.div
                 key={signal.label}
-                className='absolute w-2.5 h-2.5 bg-amber-500 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.8)] z-10'
+                className='absolute md:w-2.5 md:h-2.5 w-2 h-2 bg-amber-500 rounded-full shadow-[0_0_8px_rgba(245,158,11,0.8)] z-10'
                 initial={{ opacity: 0, scale: 0 }}
                 animate={
                   isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }
@@ -148,27 +148,27 @@ export const CompetitiveSignals = () => {
           })}
         </div>
 
-        <div className='absolute bottom-2 text-[9px] font-mono text-gray-400 uppercase tracking-widest flex items-center gap-1'>
+        <div className='absolute md:bottom-2 bottom-3 text-[10px] font-mono text-gray-400 uppercase tracking-widest flex items-center gap-1'>
           <Activity size={10} className='animate-pulse text-amber-500' />
           Live Monitoring
         </div>
       </div>
 
       {/* Right: Signals Feed */}
-      <div className='flex-1 flex flex-col h-full relative z-10'>
-        <div className='flex items-center justify-between mb-2'>
-          <div className='flex items-center gap-2'>
-            <Radar size={16} className='text-amber-600' />
-            <span className='text-xs font-bold text-gray-800 uppercase tracking-wider'>
+      <div className='flex-1 flex flex-col md:h-full h-auto w-full relative z-10'>
+        <div className='flex items-center justify-between mb-2 md:mt-0 -mt-4'>
+          <div className='flex items-center md:gap-2 gap-1.5'>
+            <Radar size={16} className='text-amber-600 md:size-4 size-3' />
+            <span className='md:text-xs text-[8px] font-bold text-gray-800 uppercase tracking-wider'>
               Competitive Signals
             </span>
           </div>
-          <div className='px-2 py-0.5 bg-gray-900 text-white text-[9px] font-bold rounded-full'>
+          <div className='md:px-2 px-1.5 py-0.5 bg-gray-900 text-white text-[8px] font-bold rounded-full'>
             {activeSignals.length} Active
           </div>
         </div>
 
-        <div className='space-y-2.5 flex-1'>
+        <div className='md:space-y-2.5 space-y-2 flex-1'>
           {activeSignals.map((signal, idx) => (
             <motion.div
               layout
@@ -184,32 +184,27 @@ export const CompetitiveSignals = () => {
                 delay: idx * 0.1,
               }}
               className={cn(
-                'flex items-center gap-3 p-2.5 rounded-lg border-2 bg-white relative overflow-hidden group cursor-pointer',
+                'flex items-center md:gap-3 gap-2 md:p-2.5 p-2 rounded-lg border-2 bg-white relative overflow-hidden group cursor-pointer',
                 signal.border
               )}
             >
               <div
                 className={cn(
-                  'p-1.5 rounded-md shrink-0',
+                  'md:p-1.5 p-1 rounded-md shrink-0',
                   signal.bg,
                   signal.color
                 )}
               >
-                <signal.icon size={14} />
+                <signal.icon className='md:size-[14px] size-3' />
               </div>
 
               <div className='flex-1 min-w-0'>
                 <div className='flex items-center gap-2'>
-                  <span className='text-[10px] font-bold text-gray-700 uppercase'>
+                  <span className='text-[9px] font-bold text-gray-700 uppercase'>
                     {signal.label}
                   </span>
-                  {idx === 0 && (
-                    <span className='text-[8px] px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded-full font-bold'>
-                      NEW
-                    </span>
-                  )}
                 </div>
-                <div className='text-xs text-gray-500 truncate font-medium'>
+                <div className='md:text-xs text-[8px] text-gray-500 truncate font-medium'>
                   {signal.desc}
                 </div>
               </div>
@@ -217,12 +212,12 @@ export const CompetitiveSignals = () => {
               <div className='text-right shrink-0'>
                 <div
                   className={cn(
-                    'text-xs font-bold flex items-center gap-0.5',
+                    'md:text-xs text-[10px] font-bold flex items-center gap-0.5',
                     signal.color
                   )}
                 >
                   {signal.metric}
-                  <ArrowUpRight size={10} />
+                  <ArrowUpRight className='md:size-[10px] size-2' />
                 </div>
               </div>
             </motion.div>

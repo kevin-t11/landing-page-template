@@ -16,49 +16,49 @@ export const ResearchSkeleton = () => {
   }, []);
 
   return (
-    <div className='w-full h-50 bg-white rounded-xl border border-gray-200 p-4 shadow-sm shadow-sky-100/50 relative overflow-hidden flex flex-col'>
+    <div className='w-full h-50 bg-white rounded-xl border border-gray-200 md:p-4 p-3 shadow-sm shadow-sky-100/50 relative overflow-hidden flex flex-col'>
       {/* Header */}
-      <div className='flex items-center justify-between mb-1 px-1'>
+      <div className='flex items-center justify-between mb-1 md:px-1 px-0'>
         <div className='flex items-center gap-2'>
-          <div className='w-10 h-10'>
+          <div className='md:w-10 md:h-10 w-7 h-7'>
             <Lottie
               animationData={researchAnimation}
               loop={true}
               autoplay={true}
             />
           </div>
-          <span className='text-xs font-bold text-gray-700 uppercase tracking-wider'>
+          <span className='md:text-xs text-[10px] font-bold text-gray-700 uppercase tracking-wider -ml-1 md:ml-0'>
             Researching
           </span>
 
-          <div className='text-xs font-mono text-sky-600'>
+          <div className='md:text-xs text-[10px] font-mono text-sky-600'>
             {Math.round(progress)}%
           </div>
         </div>
 
         <div className='flex items-center gap-1.5'>
-          <div className='w-2.5 h-2.5 rounded-full bg-red-400' />
-          <div className='w-2.5 h-2.5 rounded-full bg-yellow-400' />
-          <div className='w-2.5 h-2.5 rounded-full bg-green-400' />
+          <div className='md:w-2.5 md:h-2.5 w-2 h-2 rounded-full bg-red-400' />
+          <div className='md:w-2.5 md:h-2.5 w-2 h-2 rounded-full bg-yellow-400' />
+          <div className='md:w-2.5 md:h-2.5 w-2 h-2 rounded-full bg-green-400' />
         </div>
       </div>
 
       {/* Cards Row */}
       <div className='flex-1 flex gap-3 h-full pb-12'>
         <ResearchCard
-          icon={<Search size={16} />}
+          icon={<Search className='md:size-4 size-3' />}
           title='Trends'
           value='High Vol.'
           active={progress > 15}
         />
         <ResearchCard
-          icon={<BookOpen size={16} />}
+          icon={<BookOpen className='md:size-4 size-3' />}
           title='Sources'
           value='3 Verified'
           active={progress > 45}
         />
         <ResearchCard
-          icon={<BarChart3 size={16} />}
+          icon={<BarChart3 className='md:size-4 size-3' />}
           title='Stats'
           value='98% Acc.'
           active={progress > 75}
@@ -85,14 +85,14 @@ interface ResearchCardProps {
 const ResearchCard = ({ icon, title, value, active }: ResearchCardProps) => (
   <div
     className={cn(
-      'w-full  flex items-center justify-center gap-2 rounded-xl border transition-all duration-700 ease-in-out',
+      'w-full  flex items-center justify-center md:gap-2 gap-1 rounded-xl border transition-all duration-700 ease-in-out md:h-full h-16',
       active ? 'bg-sky-50 border-sky-200 shadow-sm' : 'bg-white border-gray-100'
     )}
   >
-    <div className='flex items-center gap-4'>
+    <div className='flex items-center md:gap-4 gap-2'>
       <div
         className={cn(
-          'p-2 rounded-full transition-all duration-700 ease-in-out',
+          'md:p-2 p-1.5 rounded-full transition-all duration-700 ease-in-out',
           active
             ? 'bg-white text-sky-600 shadow-sm'
             : 'bg-gray-50 text-gray-400'
@@ -101,12 +101,12 @@ const ResearchCard = ({ icon, title, value, active }: ResearchCardProps) => (
         {icon}
       </div>
       <div className='text-center'>
-        <div className='text-[10px] font-semibold text-gray-400 uppercase tracking-wide mb-1'>
+        <div className='text-[10px] md:text-xs font-semibold text-gray-400 uppercase tracking-wide md:mb-1 mb-0.5'>
           {title}
         </div>
         <div
           className={cn(
-            'text-xs font-medium transition-all duration-700 ease-in-out',
+            'text-[10px] md:text-xs font-medium transition-all duration-700 ease-in-out',
             active ? 'text-sky-900' : 'text-gray-300'
           )}
         >

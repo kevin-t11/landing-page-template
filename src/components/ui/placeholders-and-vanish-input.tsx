@@ -56,7 +56,7 @@ export function PlaceholdersAndVanishInput({
   return (
     <form
       className={cn(
-        'w-full relative bg-white dark:bg-zinc-800 h-12 rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 transition duration-200',
+        'w-full relative bg-white dark:bg-zinc-800 md:h-12 h-9 rounded-md overflow-hidden border border-gray-200 dark:border-gray-700 transition duration-200',
         value && 'bg-gray-50 dark:bg-zinc-900'
       )}
       onSubmit={handleSubmit}
@@ -70,7 +70,7 @@ export function PlaceholdersAndVanishInput({
         }}
         value={value}
         type='text'
-        className='w-full h-full px-4 text-sm sm:text-base z-50 border-none dark:text-white bg-transparent text-black rounded-md focus:outline-none focus:ring-0'
+        className='w-full h-full px-4 md:text-sm text-xs z-50 border-none dark:text-white bg-transparent text-black rounded-md focus:outline-none focus:ring-0'
       />
 
       <div className='absolute inset-0 flex items-center rounded-md pointer-events-none'>
@@ -94,7 +94,7 @@ export function PlaceholdersAndVanishInput({
                 duration: 0.4,
                 ease: [0.4, 0, 0.2, 1],
               }}
-              className='dark:text-zinc-500 text-sm sm:text-base font-normal text-neutral-500 pl-4 text-left w-full truncate'
+              className='dark:text-zinc-500 md:text-sm text-xs font-normal text-neutral-500 pl-4 text-left w-full truncate'
             >
               {placeholders[currentPlaceholder]}
             </motion.p>

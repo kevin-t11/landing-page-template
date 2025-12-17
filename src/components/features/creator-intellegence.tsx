@@ -13,9 +13,9 @@ export const CreatorIntellegence = () => {
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       viewport={{ once: true }}
-      className='relative w-full h-full left-6'
+      className='relative w-full h-full'
     >
-      <div className='relative z-10 px-4'>
+      <div className='relative z-10 md:px-4 h-full'>
         <PodiumStage />
       </div>
     </motion.div>
@@ -24,26 +24,26 @@ export const CreatorIntellegence = () => {
 
 export const PodiumStage = () => {
   return (
-    <div className='relative w-full flex items-end justify-center gap-4'>
-      <PodiumBlock height='h-24' delay={0.2}>
+    <div className='relative size-full flex items-end justify-center gap-2 md:gap-4'>
+      <PodiumBlock height='h-18 md:h-24' delay={0.2}>
         <Avatar src='/avatar_1.avif' alt='User 1' icon={<YTShortsIcon />} />
-        <div className='mb-8'>
+        <div className='mb-4 md:mb-8'>
           <Avatar src='/avatar_2.avif' alt='User 2' icon={<InstaReelIcon />} />
         </div>
       </PodiumBlock>
 
-      <PodiumBlock height='h-24' delay={0.1}>
+      <PodiumBlock height='h-16 md:h-24' delay={0.1}>
         <Avatar
           src='/avatar_3.avif'
           alt='User 3'
           icon={<TiktokBrandIcon className='size-4' />}
         />
-        <div className='mb-8'>
+        <div className='mb-4 md:mb-8'>
           <Avatar src='/avatar_4.avif' alt='User 4' icon={<YTShortsIcon />} />
         </div>
       </PodiumBlock>
 
-      <PodiumBlock height='h-44' delay={0} isCenter>
+      <PodiumBlock height='h-32 md:h-44' delay={0} isCenter>
         <div className='mb-2'>
           <Avatar
             src='/avatar_5.avif'
@@ -54,8 +54,8 @@ export const PodiumStage = () => {
         </div>
       </PodiumBlock>
 
-      <PodiumBlock height='h-20' delay={0.2}>
-        <div className='mb-4'>
+      <PodiumBlock height='h-14 md:h-20' delay={0.2}>
+        <div className='mb-2 md:mb-4'>
           <Avatar src='/avatar_6.avif' alt='User 6' icon={<InstaReelIcon />} />
         </div>
         <Avatar src='/avatar_7.avif' alt='User 7' icon={<TiktokBrandIcon />} />
@@ -83,11 +83,13 @@ export const PodiumBlock = ({
     <div
       className={cn(
         'flex flex-col items-center justify-end',
-        isCenter ? 'z-10 min-w-[140px]' : 'min-w-[90px]'
+        isCenter
+          ? 'z-10 min-w-[80px] md:min-w-[140px]'
+          : 'min-w-[50px] md:min-w-[90px]'
       )}
     >
       {/* Avatars */}
-      <div className='w-full flex justify-center items-end gap-3 pb-1'>
+      <div className='w-full flex justify-center items-end gap-1.5 md:gap-3 pb-1'>
         {children}
       </div>
 
@@ -111,8 +113,8 @@ export const PodiumBlock = ({
           }}
           style={{ transformOrigin: 'bottom' }}
           className={cn(
-            'relative rounded-t-[20px] backdrop-blur-md overflow-hidden',
-            isCenter ? 'h-[180px]' : 'h-[90px]',
+            'relative rounded-t-[12px] md:rounded-t-[20px] backdrop-blur-md overflow-hidden',
+            isCenter ? 'h-[130px] md:h-[180px]' : 'h-[60px] md:h-[90px]',
             isCenter
               ? 'bg-linear-to-b from-sky-400/70 via-sky-200/50 to-white shadow-[0_-10px_40px_-15px_rgba(251,146,60,0.25)]'
               : 'bg-linear-to-b from-sky-200/70 via-sky-100/30 to-sky-50/5 opacity-80'
@@ -120,12 +122,12 @@ export const PodiumBlock = ({
         >
           {/* Top Highlight */}
           <div className='absolute top-0 inset-x-0 h-px bg-white/80' />
-          <div className='absolute top-0 inset-x-4 h-6 bg-white/30 blur-lg rounded-full' />
+          <div className='absolute top-0 inset-x-2 md:inset-x-4 h-4 md:h-6 bg-white/30 blur-lg rounded-full' />
 
           {/* Center Badge */}
           {isCenter && (
             <motion.div
-              className='absolute top-8 left-0 right-0 flex justify-center'
+              className='absolute top-4 md:top-8 left-0 right-0 flex justify-center'
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -135,8 +137,8 @@ export const PodiumBlock = ({
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              <div className='bg-sky-50/90 border border-sky-200/50 px-2 py-1 rounded-full shadow-sm backdrop-blur-sm'>
-                <span className='text-[10px] font-bold text-sky-950 uppercase tracking-wide flex items-center gap-1'>
+              <div className='bg-sky-50/90 border border-sky-200/50 px-1.5 md:px-2 py-0.5 md:py-1 rounded-full shadow-sm backdrop-blur-sm'>
+                <span className='text-[9px] md:text-[10px] font-bold text-sky-950 uppercase tracking-wide flex items-center gap-0.5 md:gap-1'>
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
                     viewBox='0 0 24 24'
@@ -145,7 +147,7 @@ export const PodiumBlock = ({
                     xmlnsXlink='http://www.w3.org/1999/xlink'
                     role='img'
                     color='#00bcff'
-                    className='size-5'
+                    className='size-4 md:size-5'
                   >
                     <path
                       d='M15.9077 16.466C16.0351 15.0932 15.6021 13.5377 13.9394 11.8828C13.9515 13.6439 13.2691 15.1105 12.5817 15.9492C12.3983 16.1729 12.1015 16.2714 11.8197 16.2019C11.5379 16.1324 11.3217 15.9075 11.2648 15.6245C10.99 14.2588 10.2094 13.6572 9.37798 13.2336C9.32162 14.3973 8.81097 15.2349 8.43933 15.8445L8.43933 15.8445C8.33436 16.0167 8.24048 16.1707 8.17106 16.3087C7.06532 18.507 8.40414 20.1024 9.33044 21.2063C10.0736 21.9384 11.1891 22.4498 11.9342 22.75C14.3598 21.619 15.7145 18.5473 15.9077 16.466Z'
@@ -185,7 +187,6 @@ const Avatar = ({
   barHeight = 90,
   barDelay = 0,
   icon = <InstaReelIcon />,
-  iconClassName = 'size-5',
 }: AvatarProps) => {
   return (
     <motion.div
@@ -218,8 +219,10 @@ const Avatar = ({
       >
         <div
           className={cn(
-            'relative rounded-full border-[3px] border-white shadow-md overflow-hidden bg-gray-100',
-            isMain ? 'w-14 h-14 ring-2 ring-sky-300/80' : 'w-11 h-11'
+            'relative rounded-full border md:border-[3px] border-white shadow-md overflow-hidden bg-gray-100',
+            isMain
+              ? 'w-10 h-10 md:w-14 md:h-14 ring-2 ring-sky-300/80'
+              : 'w-8 h-8 md:w-11 md:h-11'
           )}
         >
           <Image
@@ -233,8 +236,8 @@ const Avatar = ({
 
         <BrandIcon
           className={cn(
-            'absolute -bottom-1 right-1 rounded-full bg-accent p-px ring-1 ring-white',
-            isMain ? 'size-5' : 'size-4'
+            'absolute -bottom-0.5 md:-bottom-1 right-0.5 md:right-1 rounded-full bg-accent p-px ring-1 ring-white',
+            isMain ? 'size-4 md:size-5' : 'size-3 md:size-4'
           )}
           icon={icon}
         />
@@ -242,12 +245,12 @@ const Avatar = ({
       {/* Main User Tag (Floating Popup) */}
       {isMain && (
         <motion.div
-          className='absolute left-[90%] bottom-[90%] bg-white/95 backdrop-blur shadow-[0_4px_20px_-2px_rgba(0,0,0,0.1)] border border-white/50 pl-1 pr-3 py-1.5 rounded-full flex items-center gap-2 whitespace-nowrap z-50 transform'
+          className='absolute left-[90%] bottom-[90%] bg-white/95 backdrop-blur shadow-[0_4px_20px_-2px_rgba(0,0,0,0.1)] border border-white/50 pl-0.5 md:pl-1 pr-2 md:pr-3 py-1 md:py-1.5 rounded-full flex items-center gap-1 md:gap-2 whitespace-nowrap z-50 transform'
           initial={{ scale: 0.8, opacity: 0, x: -10 }}
           animate={{ scale: 1, opacity: 1, x: 0 }}
           transition={{ delay: 0.3, duration: 0.4 }}
         >
-          <div className='w-5 h-5 rounded-full overflow-hidden shrink-0 ring-1 ring-gray-100'>
+          <div className='w-4 h-4 md:w-5 md:h-5 rounded-full overflow-hidden shrink-0 ring-1 ring-gray-100'>
             <Image
               src={src}
               alt={alt}
@@ -257,21 +260,21 @@ const Avatar = ({
             />
           </div>
 
-          <span className='text-[11px] font-semibold text-gray-700 tracking-tight'>
+          <span className='text-[9px] md:text-[11px] font-semibold text-gray-700 tracking-tight'>
             @sandykoshti
           </span>
 
           {/* Notification Dot with Ping */}
-          <div className='absolute -top-1 -right-1'>
-            <span className='relative flex h-2.5 w-2.5'>
+          <div className='absolute -top-0.5 md:-top-1 -right-0.5 md:-right-1'>
+            <span className='relative flex h-2 w-2 md:h-2.5 md:w-2.5'>
               <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75'></span>
-              <span className='relative inline-flex rounded-full h-2.5 w-2.5 bg-red-500 border border-white shadow-sm'></span>
+              <span className='relative inline-flex rounded-full h-2 w-2 md:h-2.5 md:w-2.5 bg-red-500 border border-white shadow-sm'></span>
             </span>
           </div>
         </motion.div>
       )}
       {/* Stem */}
-      <div className='w-[1.5px] h-5 bg-linear-to-b from-gray-300 via-gray-300/50 to-transparent -mt-px' />
+      <div className='w-px md:w-[1.5px] h-3 md:h-5 bg-linear-to-b from-gray-300 via-gray-300/50 to-transparent -mt-px' />
     </motion.div>
   );
 };
@@ -762,6 +765,10 @@ const BrandIcon = ({
 //         width={100}
 //         height={100}
 //         className={cn('size-full object-cover rounded-full', className)}
+//       />
+//     </motion.div>
+//   );
+// };
 //       />
 //     </motion.div>
 //   );

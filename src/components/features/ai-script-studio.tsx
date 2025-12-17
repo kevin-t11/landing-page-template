@@ -1,6 +1,6 @@
 'use client';
 
-import { ArrowRightIcon, CheckedIcon } from '@/icons';
+import { ArrowRightIcon, CheckedIcon, MobileArrowRightIcon } from '@/icons';
 import { cn } from '@/lib/utils';
 import { Loader } from 'lucide-react';
 import { AnimatePresence, motion, useInView } from 'motion/react';
@@ -56,7 +56,7 @@ export const AiScriptStudio = () => {
   return (
     <div
       ref={containerRef}
-      className='w-full h-full flex flex-col gap-4 p-4 bg-white/40'
+      className='w-full h-full flex flex-col gap-4 md:p-4 p-3 bg-white/40'
     >
       <div className='flex items-center justify-center max-w-2xs mx-auto'>
         {stepDefinitions.map((step, idx) => {
@@ -74,7 +74,7 @@ export const AiScriptStudio = () => {
                 >
                   <div
                     className={cn(
-                      'w-9 h-9 rounded-full flex items-center justify-center font-semibold text-sm transition-all duration-300',
+                      'md:size-9 size-7 rounded-full flex items-center justify-center font-semibold text-sm transition-all duration-300',
                       isComplete &&
                         'bg-green-500 text-white shadow-lg shadow-green-500/40',
                       isProcessing &&
@@ -85,9 +85,9 @@ export const AiScriptStudio = () => {
                     )}
                   >
                     {isComplete ? (
-                      <CheckedIcon className='h-9 w-9' />
+                      <CheckedIcon className='md:size-9 size-7' />
                     ) : isProcessing ? (
-                      <Loader className='h-6 w-6 text-amber-400 animate-spin' />
+                      <Loader className='md:size-6 size-4 text-amber-400 animate-spin' />
                     ) : (
                       idx + 1
                     )}
@@ -101,7 +101,7 @@ export const AiScriptStudio = () => {
                   }
                   transition={{ delay: idx * 0.15 + 0.2 }}
                   className={cn(
-                    'text-xs font-semibold text-center min-w-14 transition-colors duration-300',
+                    'md:text-xs text-[10px] font-semibold text-center md:min-w-14 min-w-11 transition-colors duration-300',
                     status === 'pending' && 'text-gray-400',
                     status === 'processing' &&
                       'text-amber-600 dark:text-amber-400',
@@ -118,7 +118,8 @@ export const AiScriptStudio = () => {
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ delay: idx * 0.15 + 0.3 }}
                 >
-                  <ArrowRightIcon className='h-full w-16 text-gray-300 -translate-y-[8px]' />
+                  <MobileArrowRightIcon className='md:hidden w-8 text-gray-300 -translate-y-[8px]' />
+                  <ArrowRightIcon className='hidden md:block w-16 h-full text-gray-300 -translate-y-[8px]' />
                 </motion.div>
               )}
             </div>

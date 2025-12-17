@@ -240,6 +240,41 @@ export const ArrowRightIcon = (props: SVGProps<SVGSVGElement>) => {
   );
 };
 
+export const MobileArrowRightIcon = (props: SVGProps<SVGSVGElement>) => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      fill='none'
+      viewBox='0 0 36 18'
+      {...props}
+    >
+      <path stroke='#E0E0E0' d='M0 8.5h36'></path>
+      <g clipPath='url(#rapid-dev-top-divider-mobile_svg__a)'>
+        <rect width='16' height='16' x='10' y='1' fill='#F7F7F7' rx='8'></rect>
+        <path
+          fill='#B8B8B8'
+          fillRule='evenodd'
+          d='M14.813 5.98a.5.5 0 0 1 .707 0l2.195 2.196a1.167 1.167 0 0 1 0 1.65L15.52 12.02a.5.5 0 1 1-.707-.707l2.195-2.195a.167.167 0 0 0 0-.236l-2.195-2.195a.5.5 0 0 1 0-.708Zm4.667 0a.5.5 0 0 1 .707 0l2.195 2.196a1.167 1.167 0 0 1 0 1.65l-2.195 2.195a.5.5 0 1 1-.707-.707l2.195-2.195a.167.167 0 0 0 0-.236L19.48 6.688a.5.5 0 0 1 0-.708'
+          clipRule='evenodd'
+        ></path>
+      </g>
+      <rect
+        width='17'
+        height='17'
+        x='9.5'
+        y='0.5'
+        stroke='#E0E0E0'
+        rx='8.5'
+      ></rect>
+      <defs>
+        <clipPath id='rapid-dev-top-divider-mobile_svg__a'>
+          <rect width='16' height='16' x='10' y='1' fill='#fff' rx='8'></rect>
+        </clipPath>
+      </defs>
+    </svg>
+  );
+};
+
 export const CheckedIcon = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
