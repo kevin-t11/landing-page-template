@@ -9,14 +9,17 @@ import {
   Target,
   User,
 } from 'lucide-react';
-import { AnimatePresence, motion, Variants } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { AnimatePresence, motion, useInView, Variants } from 'motion/react';
+import { useEffect, useRef, useState } from 'react';
 
 export const PersonaCreation = () => {
   const [scanComplete, setScanComplete] = useState(false);
   const [phase, setPhase] = useState('scanning');
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: false, margin: '-100px' });
 
   useEffect(() => {
+    if (!isInView) return;
     // Scanning phase: 0-3s
     const scanTimer = setTimeout(() => {
       setPhase('analyzing');
@@ -32,14 +35,14 @@ export const PersonaCreation = () => {
     const resetTimer = setTimeout(() => {
       setPhase('scanning');
       setScanComplete(false);
-    }, 7000);
+    }, 2000);
 
     return () => {
       clearTimeout(scanTimer);
       clearTimeout(completeTimer);
       clearTimeout(resetTimer);
     };
-  }, [scanComplete]);
+  }, [scanComplete, isInView]);
 
   const attributes = [
     {
@@ -87,7 +90,10 @@ export const PersonaCreation = () => {
   };
 
   return (
-    <div className='w-full h-full p-4 flex items-center justify-between relative overflow-hidden '>
+    <div
+      ref={containerRef}
+      className='w-full h-full p-4 flex items-center justify-between relative overflow-hidden '
+    >
       {/* Background Ambience */}
       <div className='absolute -left-10 -bottom-10 w-40 h-40 bg-indigo-50 rounded-full blur-3xl opacity-50' />
 
