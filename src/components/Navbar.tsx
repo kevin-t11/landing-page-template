@@ -19,8 +19,8 @@ export const Navbar = () => {
     { label: 'FAQ', href: '#faq' },
   ];
   return (
-    <div>
-      <nav className='sticky top-4 mt-4 md:max-w-5xl mx-auto max-w-sm rounded-full z-100 bg-background/1 backdrop-blur-sm border border-border/50'>
+    <div className='relative'>
+      <nav className='sticky top-4 mt-4 md:max-w-5xl mx-auto max-w-sm rounded-full z-50 bg-background/80 backdrop-blur-sm border border-border/50'>
         <div className='flex item-center justify-between p-4 md:px-6'>
           <div>
             <Logo
@@ -70,42 +70,44 @@ export const Navbar = () => {
         </div>
       </nav>
       {isMenuOpen && (
-        <div className='md:hidden flex flex-col items-start justify-center gap-2 px-8 py-4 w-full'>
-          {navItems.map((item, index) => (
-            <AnimatePresence mode='wait' key={item.label}>
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className='font-medium text-neutral-800 hover:text-primary bg-sky-50/10 border-b border-neutral-200 px-4 py-2 w-full text-left'
-              >
-                <Link href={item.href}>{item.label}</Link>
-              </motion.div>
-            </AnimatePresence>
-          ))}
+        <div className='md:hidden absolute left-1/2 -translate-x-1/2 mt-2 w-full max-w-sm px-4 z-40'>
+          <div className='flex flex-col items-start justify-center gap-2 px-4 py-4 w-full rounded-2xl border border-border/60 bg-background/95 shadow-lg backdrop-blur'>
+            {navItems.map((item, index) => (
+              <AnimatePresence mode='wait' key={item.label}>
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className='font-medium text-neutral-800 hover:text-primary border-b border-neutral-200/60 last:border-b-0 px-2 py-2 w-full text-left'
+                >
+                  <Link href={item.href}>{item.label}</Link>
+                </motion.div>
+              </AnimatePresence>
+            ))}
 
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
-            className='flex items-center justify-center gap-4 w-full mt-2'
-          >
-            <Button
-              variant='outline'
-              size='lg'
-              className='rounded-full flex-1 items-center justify-center'
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              className='flex items-center justify-center gap-4 w-full mt-2'
             >
-              <Link href='/login'>Login</Link>
-            </Button>
-            <Button
-              variant='skeuomorphic'
-              className='flex-1 items-center justify-center'
-            >
-              <Link href='/signup'>
-                <span>Sign Up</span>
-              </Link>
-            </Button>
-          </motion.div>
+              <Button
+                variant='outline'
+                size='lg'
+                className='rounded-full flex-1 items-center justify-center'
+              >
+                <Link href='/login'>Login</Link>
+              </Button>
+              <Button
+                variant='skeuomorphic'
+                className='flex-1 items-center justify-center'
+              >
+                <Link href='/signup'>
+                  <span>Sign Up</span>
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
         </div>
       )}
     </div>
