@@ -1,7 +1,15 @@
+'use client';
+
+import { MenuIcon, XIcon } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 import { Button } from './ui/button';
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
   const navItems = [
     { label: 'Home', href: '#' },
     { label: 'Features', href: '#features' },
@@ -11,34 +19,96 @@ export const Navbar = () => {
     { label: 'FAQ', href: '#faq' },
   ];
   return (
-    <nav className='sticky top-5 max-w-5xl mx-auto rounded-full z-100 bg-background/1 backdrop-blur-sm border border-border/50'>
-      <div className='flex items-center justify-between h-16 px-4'>
-        <div>
-          <Logo />
+    <div>
+      <nav className='sticky top-4 mt-4 md:max-w-5xl mx-auto max-w-sm rounded-full z-100 bg-background/1 backdrop-blur-sm border border-border/50'>
+        <div className='flex item-center justify-between p-4 md:px-6'>
+          <div>
+            <Logo
+              onClick={() => router.push('/')}
+              className='size-8 md:size-10'
+            />
+          </div>
+          <div className='hidden md:flex items-center justify-center space-x-4 text-gray-900'>
+            {navItems.map((item) => (
+              <Link
+                className='text-sm font-medium text-foreground hover:text-primary'
+                href={item.href}
+                key={item.label}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+          <div className='hidden md:flex gap-2 items-center'>
+            <Button variant='outline' size='lg' className='rounded-full'>
+              <Link href='/login'>Login</Link>
+            </Button>
+            <Button variant='skeuomorphic'>
+              <Link href='/signup'>
+                <span>Sign Up</span>
+              </Link>
+            </Button>
+          </div>
+
+          <div className='md:hidden flex items-center justify-center'>
+            {isMenuOpen ? (
+              <button
+                className='active:scale-95 active:rorate-45 transition-all duration-300'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <XIcon className='size-6' />
+              </button>
+            ) : (
+              <button
+                className='active:scale-95 active:rorate-45 transition-all duration-300'
+                onClick={() => setIsMenuOpen(true)}
+              >
+                <MenuIcon className='size-6' />
+              </button>
+            )}
+          </div>
         </div>
-        <div className='flex space-x-4 text-gray-900'>
-          {navItems.map((item) => (
-            <Link
-              className='text-sm font-medium text-foreground hover:text-primary'
-              href={item.href}
-              key={item.label}
-            >
-              {item.label}
-            </Link>
+      </nav>
+      {isMenuOpen && (
+        <div className='md:hidden flex flex-col items-start justify-center gap-2 px-8 py-4 w-full'>
+          {navItems.map((item, index) => (
+            <AnimatePresence mode='wait' key={item.label}>
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className='font-medium text-neutral-800 hover:text-primary bg-sky-50/10 border-b border-neutral-200 px-4 py-2 w-full text-left'
+              >
+                <Link href={item.href}>{item.label}</Link>
+              </motion.div>
+            </AnimatePresence>
           ))}
+
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            className='flex items-center justify-center gap-4 w-full mt-2'
+          >
+            <Button
+              variant='outline'
+              size='lg'
+              className='rounded-full flex-1 items-center justify-center'
+            >
+              <Link href='/login'>Login</Link>
+            </Button>
+            <Button
+              variant='skeuomorphic'
+              className='flex-1 items-center justify-center'
+            >
+              <Link href='/signup'>
+                <span>Sign Up</span>
+              </Link>
+            </Button>
+          </motion.div>
         </div>
-        <div className='flex gap-2 items-center'>
-          <Button variant='outline' size='lg' className='rounded-full'>
-            <Link href='/login'>Login</Link>
-          </Button>
-          <Button variant='skeuomorphic'>
-            <Link href='/signup'>
-              <span>Sign Up</span>
-            </Link>
-          </Button>
-        </div>
-      </div>
-    </nav>
+      )}
+    </div>
   );
 };
 

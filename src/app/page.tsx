@@ -10,10 +10,10 @@ export default function Page() {
     <BackgroundPattern>
       <Container>
         <Navbar />
-        <HeroSection />
+        {/* <HeroSection />
         <HeroImage />
         <SectionSeparator className='-mt-24 relative z-10' />
-        <FeaturesSection />
+        <FeaturesSection /> */}
       </Container>
     </BackgroundPattern>
   );
