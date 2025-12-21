@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/Hero';
 import { HeroImage } from '@/components/HeroImage';
 import { Logo, Navbar } from '@/components/Navbar';
 import { BackgroundPattern } from '@/components/pattern';
+import { Testimonial } from '@/components/Testimonials';
 import { cn } from '@/lib/utils';
 
 export default function Page() {
@@ -14,6 +15,8 @@ export default function Page() {
         <HeroImage />
         <SectionSeparator className='-mt-24 relative z-10' />
         <FeaturesSection />
+        <SectionSeparator />
+        <Testimonial />
       </Container>
     </BackgroundPattern>
   );
